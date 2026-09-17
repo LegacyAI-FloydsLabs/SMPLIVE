@@ -1,0 +1,167 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+# AI and answer-engine crawlers are welcome to crawl the public site.
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /customer-portal/
+Disallow: /internal/
+Disallow: /staging/
+
+# Machine-readable business summaries for AI and answer engines.
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+Sitemap: https://www.simplemanplumbing.net/sitemap.xml
+Host: www.simplemanplumbing.net

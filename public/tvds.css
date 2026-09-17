@@ -1,0 +1,145 @@
+/* =========================================================
+   TVDS — Three-Vertical Device Standard layer
+   Verticals selected by capability via tvds.js, which sets
+   html[data-vertical="mobile"|"tablet"|"desktop"].
+   Shared logic/content untouched; presentation forks only.
+   Desktop vertical = the existing V3 Atmospheric design.
+   ========================================================= */
+
+/* ---------- Manual override widget (all verticals; QA + user) ---------- */
+.tvds-switch { position: fixed; right: 12px; bottom: 12px; z-index: 90; display: flex; gap: 6px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--overlay-strong); border: 1px solid var(--line); border-radius: 999px; padding: 6px 8px;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: .35; transition: opacity .25s; }
+.tvds-switch:hover, .tvds-switch:focus-within { opacity: 1; }
+.tvds-switch button { background: none; border: 0; color: var(--muted); padding: 4px 8px; border-radius: 999px; font: inherit; letter-spacing: inherit; text-transform: inherit; min-height: 24px; }
+.tvds-switch button[aria-pressed="true"] { color: var(--copper-l); border: 1px solid var(--copper); }
+html[data-vertical="mobile"] .tvds-switch { position: static; margin: 20px auto 8px; width: max-content; opacity: .7; }
+
+/* =========================================================
+   MOBILE VERTICAL — single column, content-first, thumb-first
+   ========================================================= */
+
+/* --- Header: collapse the triple stack to one slim bar + hide utility row.
+       (Defect: banner+top+nav consumed ~25% of a phone screen.) --- */
+html[data-vertical="mobile"] .air-top { display: none; }
+html[data-vertical="mobile"] .air-emergency { padding-top: env(safe-area-inset-top, 0px); }
+html[data-vertical="mobile"] .air-emergency .wrap { padding: 9px 0; justify-content: center; }
+html[data-vertical="mobile"] .air-emergency { font-size: 12px; }
+html[data-vertical="mobile"] .air-emergency .wrap span { display: none; }
+html[data-vertical="mobile"] .air-emergency a { flex: 0 0 auto; font-weight: 700; letter-spacing: .1em; }
+html[data-vertical="mobile"] .air-emergency a::before { content: ""; }
+html[data-vertical="mobile"] .air-nav { position: static; }               /* un-stick: content first */
+html[data-vertical="mobile"] .air-nav .wrap { grid-template-columns: 1fr auto; gap: 8px; padding: 12px 0; }
+html[data-vertical="mobile"] .air-nav .util-left { display: none; }        /* booking pill lives in bottom nav */
+html[data-vertical="mobile"] .air-nav .lockup { font-size: 20px; justify-self: start; }
+html[data-vertical="mobile"] .air-nav .lockup .small { display: none; }
+html[data-vertical="mobile"] .air-toggle { display: none; }                /* burger replaced by bottom nav */
+html[data-vertical="mobile"] .air-nav nav { display: none; }
+html[data-vertical="mobile"] .air-nav nav.open { display: none; }
+
+/* --- Bottom navigation: 4 destinations + call, ≥44px targets, safe-area --- */
+html[data-vertical="mobile"] .tvds-bottomnav { display: grid; }
+.tvds-bottomnav { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 80;
+  grid-template-columns: repeat(5, 1fr); gap: 0;
+  background: rgba(10,15,20,.92); border-top: 1px solid var(--line-2);
+  backdrop-filter: blur(20px) saturate(130%); -webkit-backdrop-filter: blur(20px) saturate(130%);
+  padding-bottom: env(safe-area-inset-bottom, 0px); }
+.tvds-bottomnav a { display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; min-height: 56px; padding: 8px 4px; color: var(--text-soft);
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; }
+.tvds-bottomnav a svg { width: 20px; height: 20px; stroke-width: 1.6; }
+.tvds-bottomnav a.current { color: var(--copper-l); }
+.tvds-bottomnav a.call { color: var(--bg); background: var(--copper); font-weight: 700; }
+.tvds-bottomnav a.call svg { color: var(--bg); }
+/* The bottom navigation owns its surface color. Without this light-theme
+   counterpart, dark navigation text inherits onto the dark glass bar. */
+html[data-theme="light"] .tvds-bottomnav { background: rgba(255,253,248,.96); border-top-color: rgba(39,35,29,.25); box-shadow: 0 -10px 28px rgba(39,35,29,.12); }
+html[data-theme="light"] .tvds-bottomnav a { color: rgba(32,38,43,.82); }
+html[data-theme="light"] .tvds-bottomnav a.current { color: var(--copper-d); }
+html[data-theme="light"] .tvds-bottomnav a.call,
+html[data-theme="light"] .tvds-bottomnav a.call svg { color: #FFFDF8; }
+html[data-vertical="mobile"] body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+html[data-vertical="mobile"] .air-foot { padding-bottom: 24px; }
+
+/* --- Image obstruction fix: overlay cards become captions BELOW the photo --- */
+html[data-vertical="mobile"] .split .figure-overlay {
+  position: static; max-width: 100%; margin: 0; border-radius: 0 0 18px 18px; right: auto; bottom: auto; }
+html[data-vertical="mobile"] .split .figure { display: flex; flex-direction: column; }
+html[data-vertical="mobile"] .air-hero .figure-tag { position: static; display: inline-flex; margin-top: 10px; }
+html[data-vertical="mobile"] .air-gallery figcaption { position: static; display: inline-flex; margin: 10px 0 0 0; background: none; border: 0; padding: 0; }
+
+/* --- Type scale + rhythm for small screens --- */
+html[data-vertical="mobile"] h1 { font-size: clamp(38px, 11vw, 56px); }
+html[data-vertical="mobile"] h2 { font-size: clamp(30px, 8.5vw, 44px); }
+html[data-vertical="mobile"] .lede { font-size: 16px; }
+html[data-vertical="mobile"] .section { padding: 56px 0; }
+html[data-vertical="mobile"] .air-hero { padding: 40px 0 48px; }
+html[data-vertical="mobile"] .air-hero .meta { grid-template-columns: 1fr; gap: 18px; }
+html[data-vertical="mobile"] .air-hero .meta .stat .n { font-size: 26px; }
+html[data-vertical="mobile"] .air-hero .meta .stat { display: flex; align-items: baseline; gap: 12px; }
+html[data-vertical="mobile"] .air-hero .meta .stat .l { margin-top: 0; }
+/* hard width discipline: nothing may force horizontal scroll */
+html[data-vertical="mobile"] body { overflow-x: hidden; }
+html[data-vertical="mobile"] .wrap { max-width: 100vw; }
+html[data-vertical="mobile"] .lede { max-width: 100%; }
+html[data-vertical="mobile"] h1 { overflow-wrap: anywhere; }
+
+/* --- All grids single-column; touch targets ≥44px --- */
+html[data-vertical="mobile"] .air-hero .wrap, html[data-vertical="mobile"] .split,
+html[data-vertical="mobile"] .areas-air, html[data-vertical="mobile"] .contact-air,
+html[data-vertical="mobile"] .banner-cta .wrap, html[data-vertical="mobile"] .page-head-air .wrap,
+html[data-vertical="mobile"] .svc-air .wrap, html[data-vertical="mobile"] .feature-grid,
+html[data-vertical="mobile"] .areas-air-grid, html[data-vertical="mobile"] .promise-rail,
+html[data-vertical="mobile"] .cov-stats, html[data-vertical="mobile"] .flow,
+html[data-vertical="mobile"] .air-reviews-grid, html[data-vertical="mobile"] .air-faq .grid,
+html[data-vertical="mobile"] .local-wrap, html[data-vertical="mobile"] .air-gallery .pair,
+html[data-vertical="mobile"] .air-pricing .grid, html[data-vertical="mobile"] .air-pricing .head,
+html[data-vertical="mobile"] .air-gallery .head, html[data-vertical="mobile"] .air-foot .wrap,
+html[data-vertical="mobile"] .contact-air form { grid-template-columns: 1fr; gap: 28px; }
+html[data-vertical="mobile"] .air-pricing .cell { border-right: 0; border-bottom: 1px solid var(--line); }
+html[data-vertical="mobile"] .btn { min-height: 48px; width: 100%; justify-content: center; }
+html[data-vertical="mobile"] .ctas { flex-direction: column; align-items: stretch; gap: 12px; }
+html[data-vertical="mobile"] .near-chip { min-height: 44px; padding: 12px 18px; }
+html[data-vertical="mobile"] details summary { min-height: 48px; display: flex; align-items: center; }
+
+/* --- Motion economy on touch: no parallax/ken-burns/cursor mesh --- */
+html[data-vertical="mobile"] .ken-burns img { animation: none; }
+html[data-vertical="mobile"] .air-hero .figure-wrap img { transform: none !important; }
+html[data-vertical="mobile"] .feature::after { display: none; }
+
+/* =========================================================
+   TABLET VERTICAL — two-pane comfort, hover gated, no burger
+   ========================================================= */
+html[data-vertical="tablet"] .air-top { display: none; }
+html[data-vertical="tablet"] .air-emergency .wrap { padding: 10px 0; }
+html[data-vertical="tablet"] .air-nav .wrap { grid-template-columns: auto 1fr; gap: 20px; padding: 16px 0; }
+html[data-vertical="tablet"] .air-nav .util-left { display: none; }
+html[data-vertical="tablet"] .air-nav .lockup { justify-self: start; }
+html[data-vertical="tablet"] .air-toggle { display: none; }
+html[data-vertical="tablet"] .air-nav nav { display: flex !important; justify-self: end; gap: 12px 20px; flex-direction: row; flex-wrap: wrap; justify-content: flex-end; border: 0; margin: 0; width: auto; }
+html[data-vertical="tablet"] .air-nav nav a { padding: 12px 6px; border-bottom: 1px solid transparent; min-height: 44px; display: inline-flex; align-items: center; }
+html[data-vertical="tablet"] h1 { font-size: clamp(48px, 8vw, 88px); }
+html[data-vertical="tablet"] .air-hero .wrap { grid-template-columns: 1.1fr .9fr; gap: 36px; }
+html[data-vertical="tablet"] .feature-grid { grid-template-columns: 1fr 1fr 1fr; }
+html[data-vertical="tablet"] .areas-air-grid { grid-template-columns: 1fr 1fr; }
+html[data-vertical="tablet"] .promise-rail { grid-template-columns: 1fr 1fr; }
+html[data-vertical="tablet"] .air-reviews-grid { grid-template-columns: 1fr 1fr; }
+html[data-vertical="tablet"] .air-pricing .grid { grid-template-columns: 1fr 1fr; }
+html[data-vertical="tablet"] .air-pricing .cell:nth-child(even) { border-right: 0; }
+html[data-vertical="tablet"] .split { grid-template-columns: 1fr 1fr; gap: 32px; }
+html[data-vertical="tablet"] .split .figure-overlay { position: static; max-width: 100%; margin-top: 0; border-radius: 0 0 18px 18px; }
+html[data-vertical="tablet"] .btn { min-height: 46px; }
+/* hover affordances only where hover exists */
+@media (hover: none) {
+  html[data-vertical="tablet"] .feature::after { display: none; }
+  html[data-vertical="tablet"] .air-gallery figure:hover img { transform: none; }
+}
+
+/* =========================================================
+   DESKTOP VERTICAL — the V3 design as built (explicit floor)
+   ========================================================= */
+html[data-vertical="desktop"] .tvds-bottomnav { display: none; }
+/* Desktop vertical inherits V3 exactly, INCLUDING its narrow-window fallbacks
+   (burger nav under 1080px). A desktop-class device in a narrow window stays
+   desktop-class per TVDS; the legacy breakpoints keep that window usable. */

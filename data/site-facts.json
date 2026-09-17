@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "registry_name": "Simple Man Plumbing facts registry",
+  "owner_copy_update_2026_09_16": {
+    "confirmed_hours": "Monday–Friday, 8 a.m.–5 p.m. Visits by appointment.",
+    "form_recipient": "simplemanplumbing@gmail.com",
+    "source": "Owner's explicit site copy update request, 2026-09-16",
+    "scope": "The statements below are approved by the owner for this update. Older registry entries retain their original snapshot dates and evidence status.",
+    "hero_cards": [
+      "8+ yrs — Of hands-on plumbing experience",
+      "1-yr — Workmanship guarantee on every job",
+      "Upfront — Pricing and scope agreed in writing before work begins"
+    ],
+    "payment_answer": "We accept all major credit and debit cards (Visa, Mastercard, Amex, Discover), ACH transfers, and personal checks upon completion. For larger installations and staged projects, milestone payment terms can be written directly into the proposal.",
+    "primary_service_areas": "Indianapolis · Carmel · Fishers · Westfield · Noblesville · Zionsville · Pendleton · Greenwood",
+    "footer_links": {
+      "google": "https://www.google.com/search?q=Simple+Man+Plumbing+Indianapolis",
+      "facebook": "https://www.facebook.com/profile.php?id=61587407382560",
+      "nextdoor": "https://nextdoor.com/pages/simple-man-plumbing-fortville-in/"
+    },
+    "link_evidence": "Google search URL supplied by owner. Facebook URL listed under Social Media in the exact BBB business profile. Nextdoor profile verified by business name, Fortville location and telephone +1-765-860-8667 on 2026-09-16."
+  },
+  "registry_version": "0.1.0",
+  "snapshot_date": "2026-08-17",
+  "scope": "Experimental Site copy only. This registry records what the copied site says; it does not independently verify real-world business facts.",
+  "publication_rule": "Existing public-demo claims may be reproduced consistently in generated materials. New or strengthened factual claims require an owner confirmation or authoritative source recorded here.",
+  "status_legend": {
+    "APPROVED—CURRENT DEMO COPY": "Existing visible demo content that may be reproduced consistently while the demo is under review.",
+    "APPROVED—AUTHORITATIVE SOURCE": "A fact confirmed by a named government or first-party source and safe to use for the stated purpose.",
+    "UNVERIFIED—DO NOT PUBLISH": "Observed in the copied site but not confirmed by the owner or an authoritative source. Keep out of new or regenerated public material.",
+    "MISSING—DO NOT INVENT": "No usable value was found in the copied site. Supply an owner-confirmed or authoritative value before publishing."
+  },
+  "authoritative_sources": {
+    "indiana_plumbing_contractor": {
+      "url": "https://mylicense.in.gov/EVerification/Search.aspx",
+      "checked_on": "2026-08-17",
+      "facts": "David Kropczynski, Indiana Plumbing Contractor PC12300114, active through 2027-12-31. This verifies an individual credential, not a corporate plumbing license."
+    },
+    "flood_prevention_guidance": {
+      "checked_on": "2026-08-17",
+      "sources": [
+        "https://www.in.gov/dhs/get-prepared/nature-safety/flood-safety/",
+        "https://www.fema.gov/sites/default/files/documents/fema_hmd_fema_p-312-homeowners-guide-retrofitting_07152025.pdf",
+        "https://info.citizensenergygroup.com/safety/water/sewer-back-ups",
+        "https://info.citizensenergygroup.com/wastewater/connection"
+      ],
+      "use": "Safety and preparedness guidance in the flood-prevention resource page; not a statement of an emergency, response time, or business affiliation."
+    }
+  },
+  "business_identity": {
+    "legal_name": {
+      "value": null,
+      "publication_status": "MISSING—DO NOT INVENT",
+      "sources": []
+    },
+    "display_name": {
+      "value": "Simple Man Plumbing",
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "sources": [
+        "public/index.html:6-12",
+        "public/llms.txt:1-3"
+      ]
+    },
+    "website": {
+      "value": "https://www.simplemanplumbing.net/",
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "sources": [
+        "public/index.html:6-14",
+        "public/llms.txt:19-24"
+      ]
+    },
+    "owner_or_lead": {
+      "value": "Dave; described as owner and lead plumber",
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "sources": [
+        "public/about.html:68-78",
+        "public/llms.txt:7-9"
+      ]
+    }
+  },
+  "contact": {
+    "telephone_e164": {
+      "value": "+1-765-860-8667",
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "sources": [
+        "public/contact.html:26,100-103",
+        "public/llms.txt:19-25"
+      ]
+    },
+    "email": {
+      "value": "sales@simplemanplumbing.net",
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "sources": [
+        "public/contact.html:26,100-103",
+        "public/llms.txt:19-24"
+      ]
+    },
+    "physical_address": {
+      "value": null,
+      "publication_status": "MISSING—DO NOT INVENT",
+      "notes": "The copied JSON-LD has a non-street string (Serving Indianapolis and the Northside) and an Indianapolis ZIP. It is not sufficient evidence of a publishable physical address.",
+      "sources": [
+        "public/contact.html:26"
+      ]
+    },
+    "geographic_coordinates": {
+      "value": null,
+      "publication_status": "MISSING—DO NOT INVENT",
+      "notes": "Coordinates shown in copied JSON-LD are not corroborated by a verifiable physical address and must not be regenerated.",
+      "sources": [
+        "public/contact.html:26"
+      ]
+    },
+    "operating_hours": {
+      "value": null,
+      "publication_status": "MISSING—DO NOT INVENT",
+      "notes": "Current copied pages disagree: llms.txt and the Zionsville page specify appointment/office hours, multiple page footers say Monday through Friday 8–5, and repeated JSON-LD represents a 24/7 contact point. Owner confirmation is required.",
+      "sources": [
+        "public/llms.txt:19-25",
+        "public/contact.html:103,117",
+        "public/plumber-zionsville.html:26"
+      ]
+    }
+  },
+  "service_areas": {
+    "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+    "notes": "The list is consistently present in llms.txt and the service-area index, but no owner confirmation is stored in this copy.",
+    "sources": [
+      "public/llms.txt:27-45",
+      "public/areas.html:95-113"
+    ],
+    "areas": [
+      { "name": "Indianapolis", "county": "Marion County", "page": "/plumber-indianapolis.html" },
+      { "name": "Carmel", "county": "Hamilton County", "page": "/plumber-carmel.html" },
+      { "name": "Fishers", "county": "Hamilton County", "page": "/plumber-fishers.html" },
+      { "name": "Westfield", "county": "Hamilton County", "page": "/plumber-westfield.html" },
+      { "name": "Noblesville", "county": "Hamilton County", "page": "/plumber-noblesville.html" },
+      { "name": "Broad Ripple", "county": "Marion County", "page": "/plumber-broad-ripple.html" },
+      { "name": "Castleton", "county": "Marion County", "page": "/plumber-castleton.html" },
+      { "name": "Keystone at the Crossing", "county": "Marion County", "page": "/plumber-keystone.html" },
+      { "name": "Pendleton", "county": "Madison County", "page": "/plumber-pendleton.html" },
+      { "name": "Greenwood", "county": "Johnson County", "page": "/plumber-greenwood.html" },
+      { "name": "Zionsville", "county": "Boone County", "page": "/plumber-zionsville.html" }
+    ]
+  },
+  "services": {
+    "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+    "sources": [
+      "public/llms.txt:47-51",
+      "public/services.html:100-157"
+    ],
+    "categories": [
+      {
+        "name": "Residential plumbing",
+        "observed_offerings": [
+          "new construction rough-in",
+          "whole-home repipes",
+          "kitchen and bath remodels and additions",
+          "gas and appliance lines",
+          "permitting and inspections"
+        ]
+      },
+      {
+        "name": "Everyday repairs",
+        "observed_offerings": [
+          "leaks and drips",
+          "toilets and garbage disposals",
+          "sump pumps and backup systems",
+          "sewer line repair"
+        ]
+      },
+      {
+        "name": "Home system upgrades",
+        "observed_offerings": [
+          "tank water heaters",
+          "tankless water heaters",
+          "water softeners and filtration",
+          "pressure regulators and expansion",
+          "fixture replacement"
+        ]
+      }
+    ]
+  },
+  "pricing": {
+    "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+    "notes": "The copied site labels these as typical ranges, not guarantees, and says final price follows on-site diagnosis. Owner confirmation and effective date are required before reuse.",
+    "schema_price_range": "$89-$22,000",
+    "schema_price_range_basis": "Derived only from the lowest and highest values in the copied, visible pricing list; it is not a quote or guarantee.",
+    "sources": [
+      "public/llms.txt:10-17",
+      "public/services.html:60-96"
+    ],
+    "observed_ranges_usd": [
+      { "service": "Diagnostic visit", "minimum": 89, "maximum": null },
+      { "service": "Faucet repair", "minimum": 149, "maximum": 320 },
+      { "service": "Water heater installed", "minimum": 1800, "maximum": 3400 },
+      { "service": "Whole-home repipe", "minimum": 9000, "maximum": 22000 }
+    ]
+  },
+  "claims_requiring_evidence": {
+    "experience_and_owner_led_practice": {
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "observed_claim": "Dave has over eight years of hands-on plumbing experience and is owner-led.",
+      "sources": [
+        "public/index.html:85-89,148-151",
+        "public/about.html:68-78",
+        "public/llms.txt:3,7-9"
+      ]
+    },
+    "workmanship_guarantee": {
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "observed_claim": "One-year workmanship guarantee; return at no extra cost if work is not fixed right.",
+      "sources": [
+        "public/index.html:85-89,156-169",
+        "public/llms.txt:11-12"
+      ]
+    },
+    "licenses_bonding_and_insurance": {
+      "publication_status": "APPROVED—AUTHORITATIVE SOURCE",
+      "observed_claim": "David Kropczynski holds an active Indiana Plumbing Contractor credential, PC12300114, through 2027-12-31. Existing demo copy also states licensed, bonded, and insured; do not infer a corporate plumbing license or publish insurance-policy details without separate evidence.",
+      "sources": [
+        "public/llms.txt:3,7-9,60-63",
+        "public/plumber-zionsville.html:26-28,201-202",
+        "https://mylicense.in.gov/EVerification/Search.aspx (checked 2026-08-17)"
+      ]
+    },
+    "emergency_and_response_claims": {
+      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "observed_claim": "The phone is answered 24/7 and non-emergency visits normally receive a 2–3 business-day window.",
+      "sources": [
+        "public/contact.html:31,88-93",
+        "public/index.html:213-215",
+        "public/plumber-zionsville.html:28"
+      ]
+    },
+    "reviews_or_ratings": {
+      "value": [],
+      "publication_status": "MISSING—DO NOT INVENT",
+      "notes": "No individual review, rating, reviewer, date, or review-source record is stored in this copied site. llms.txt says reviews are present, but the copied public HTML contains no review or aggregateRating structured-data property.",
+      "sources": [
+        "public/llms.txt:69-71"
+      ]
+    }
+  },
+  "ready_for_generation": {
+    "approved_facts": [
+      "Existing visible demo claims may be reproduced consistently during review.",
+      "David Kropczynski individual Indiana Plumbing Contractor credential PC12300114, active through 2027-12-31.",
+      "Flood-prevention safety guidance linked to the listed Indiana, FEMA, and utility sources."
+    ],
+    "rule": "Do not add a physical address, geographic coordinates, corporate license, insurance-policy detail, review markup, or a newly invented operational promise without direct owner confirmation or an authoritative source."
+  }
+}
