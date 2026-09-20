@@ -66,7 +66,7 @@ async function publicPages() {
       .sort((a, b) => (a === "index.html" ? -1 : b === "index.html" ? 1 : a.localeCompare(b)))
       .map(async (filename) => {
         const html = await readFile(path.join(publicDir, filename), "utf8");
-        if (/<meta\s+[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html)) {
+        if (/<meta\b(?=[^>]*\bname=["']robots["'])(?=[^>]*\bcontent=["'][^"']*noindex)[^>]*>/i.test(html)) {
           return null;
         }
         return { filename, title: titleFromHtml(html, filename), text: htmlToText(html) };
