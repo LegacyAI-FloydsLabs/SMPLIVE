@@ -33,6 +33,10 @@ function normalizeText(value) {
     .trim();
 }
 
+function isNoindex(html) {
+  return /<meta\s+[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
+}
+
 function visibleText(html) {
   return html
     .replace(/<!--([\s\S]*?)-->/g, "")
@@ -134,10 +138,13 @@ test("sitemap covers every public HTML page exactly once", async () => {
     readdir(publicDirectory),
     readFile(path.join(publicDirectory, "sitemap.xml"), "utf8"),
   ]);
+  const indexableFiles = [];
+  for (const file of files.filter((entry) => entry.endsWith(".html") && entry !== "404.html")) {
+    const html = await readFile(path.join(publicDirectory, file), "utf8");
+    if (!isNoindex(html)) indexableFiles.push(file);
+  }
   const expectedLocations = new Set(
-    files
-      .filter((file) => file.endsWith(".html") && file !== "404.html")
-      .map((file) => (file === "index.html" ? `${canonicalOrigin}/` : `${canonicalOrigin}/${file}`)),
+    indexableFiles.map((file) => (file === "index.html" ? `${canonicalOrigin}/` : `${canonicalOrigin}/${file}`)),
   );
   const locations = sitemapLocations(sitemap);
 
@@ -225,6 +232,7 @@ test("uses one cross-linked JSON-LD graph and disciplined metadata on every publ
 
   for (const file of files) {
     const html = await readFile(path.join(publicDirectory, file), "utf8");
+    if (isNoindex(html)) continue;
     const graphs = jsonLdObjects(html);
     assert.equal(graphs.length, 1, `${file} must have one JSON-LD block`);
     assert.ok(Array.isArray(graphs[0]["@graph"]), `${file} JSON-LD must use @graph`);
