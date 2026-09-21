@@ -6,6 +6,10 @@ const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const publicDirectory = path.join(siteRoot, "public");
 const files = (await readdir(publicDirectory)).filter((file) => file.endsWith(".html"));
 
+// Guarantee-related claims are intentionally absent from this table: the
+// one-year workmanship guarantee is owner-confirmed (data/site-facts.json,
+// claims_requiring_evidence.workmanship_guarantee, APPROVED—OWNER CONFIRMED)
+// and must not be stripped back to hedge language by this script.
 const replacements = [
   ["Leak or no-water situation? The phone is answered 24/7 &mdash; day, night, weekends, holidays.", "Urgent leak, water intrusion, or no-water issue? Call now to check availability."],
   ["Emergency &middot; (765) 860-8667", "Call now &middot; (765) 860-8667"],
@@ -20,13 +24,9 @@ const replacements = [
   ["Cards (Visa, Mastercard, Amex, Discover), ACH, and personal check on completion. Larger projects can be staged with a deposit and milestone payments &mdash; written into the proposal.", "Ask about current payment options and project terms when you schedule."],
   ["The phone is answered 24/7 &mdash; nights, weekends, holidays. For active leaks, no-water issues, and burst lines, we&rsquo;ll get someone out as fast as physically possible &mdash; including weekends. After-hours rates are quoted before dispatch.", "Call to discuss current availability for an urgent leak, water intrusion, sewer backup, or no-water issue."],
   ["The phone is answered 24/7. For active leaks, sewer backups, no-water issues, and burst lines, we&rsquo;ll get someone out as fast as physically possible &mdash; including weekends. After-hours rates are quoted before dispatch.", "Call to discuss current availability for an urgent leak, water intrusion, sewer backup, or no-water issue."],
-  ["If the work isn&rsquo;t right the first time, we come back and make it right at no extra cost. Workmanship is guaranteed for one year on labor; manufacturer warranties pass through on parts and fixtures.", "Ask about the warranty terms that apply to your specific repair or installation before work begins."],
   ["<summary>Do you do emergency / weekend calls", "<summary>Can I call about an urgent water problem"],
   ["<summary>What&rsquo;s your guarantee, exactly?</summary>", "<summary>What warranty terms apply?</summary>"],
   ["<summary>What payment do you accept?</summary>", "<summary>How do payment options work?</summary>"],
-  ["<div class=\"stat\"><div class=\"n\" data-count=\"100\" data-suffix=\"%\">100%</div><div class=\"l\">Workmanship guaranteed &mdash; fixed right or it&rsquo;s on us</div></div>", "<div class=\"stat\"><div class=\"n\">Clear</div><div class=\"l\">Scope and options explained before you decide</div></div>"],
-  ["<div class=\"stat\"><div class=\"n\" data-count=\"1\" data-suffix=\"-yr\">1-yr</div><div class=\"l\">Workmanship guarantee on every job</div></div>", "<div class=\"stat\"><div class=\"n\">Fair</div><div class=\"l\">Straightforward pricing for the work your home needs</div></div>"],
-  ["<div class=\"item\"><span class=\"roman\">IV.</span><h4>Done Right, Or It&rsquo;s On Us</h4><p>If it&rsquo;s not fixed right the first time, we come back &mdash; at no extra cost.</p></div>", "<div class=\"item\"><span class=\"roman\">IV.</span><h4>Clear Terms</h4><p>Ask about the scope, pricing, and warranty terms for your specific project before work begins.</p></div>"],
   ["<li>Mon &ndash; Fri &middot; 8 a.m. &ndash; 5 p.m.</li><li>By appointment, and</li><li>Tuesdays in the office</li>", "<li>Call to confirm current availability</li>"],
 ];
 

@@ -13,6 +13,11 @@ The machine-readable registry is [`data/site-facts.json`](data/site-facts.json).
 - **Indiana contractor credential:** David Kropczynski holds Indiana Plumbing Contractor credential `PC12300114`, active through December 31, 2027. Source: [Indiana PLA verification](https://mylicense.in.gov/EVerification/Search.aspx), checked August 17, 2026. This is an individual credential; it is not a claim that a corporate entity holds a separate plumbing license.
 - **Flood-prevention resource guidance:** the flood-and-sump-pump page links to [Indiana flood safety](https://www.in.gov/dhs/get-prepared/nature-safety/flood-safety/), FEMA homeowner guidance, and public sewer-backup/connection resources. These sources support safety and prevention guidance only; they do not establish current emergency conditions, availability, or affiliation.
 
+## Owner-confirmed claims
+
+- **One-year workmanship guarantee:** approved by the owner on 2026-09-16 (`owner_copy_update_2026_09_16.hero_cards[1]`) and reconfirmed directly on 2026-09-21. Registry entry: `claims_requiring_evidence.workmanship_guarantee`, now `APPROVED—OWNER CONFIRMED`.
+- **One-business-day contact-form response:** confirmed by the owner on 2026-09-21. Registry entry: `claims_requiring_evidence.contact_form_response_commitment`, `APPROVED—OWNER CONFIRMED`. This is narrower than, and does not confirm, the 24/7-phone and 2–3-business-day visit-window claims below, which remain unverified.
+
 ## What the copied site currently says
 
 | Subject | Observed value | Status | Exact copied-site evidence |
@@ -34,7 +39,7 @@ The machine-readable registry is [`data/site-facts.json`](data/site-facts.json).
 - Operating hours. Current copy conflicts: appointment/Tuesday-office hours in `public/llms.txt:19-25`, Monday–Friday hours in `public/contact.html:117`, and a 24/7 contact point in `public/contact.html:26`.
 - License numbers, licensing authority/record, insurance and bonding evidence, and expiry dates. Claims exist, but evidence does not. Sources: `public/llms.txt:3,7-9,60-63`; `public/plumber-zionsville.html:26-28,201-202`.
 - Individual reviews, ratings, review source URLs, reviewer names, and dates. No review records are stored in the copied public files; do not synthesize them. `public/llms.txt:69-71` only asserts they exist.
-- Any response-time, emergency availability, guarantee, pricing, or location-specific operational claim. These are claims in current copy, not verified facts.
+- Any emergency-availability, pricing, or location-specific operational claim not listed under “Owner-confirmed claims” above. This includes the 24/7-phone-coverage and 2–3-business-day visit-window claims in current copy, which remain unverified. The one-year workmanship guarantee and the one-business-day contact-form response are owner-confirmed (see above) and are not covered by this restriction.
 
 ## Reconciliation required before schema work
 
