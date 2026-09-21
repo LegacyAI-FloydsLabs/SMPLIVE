@@ -12,7 +12,7 @@
   --line-2:    rgba(255,255,255,.18);
   --text:      #E5E0D5;
   --text-soft: rgba(229,224,213,.72);
-  --muted:     rgba(229,224,213,.55);
+  --muted:     rgba(229,224,213,.60);
   --overlay:   rgba(10,15,20,.55);
   --overlay-strong: rgba(10,15,20,.82);
   --map-grid:  rgba(255,255,255,.06);
@@ -42,7 +42,7 @@ html[data-theme="light"] {
   --line-2:    rgba(39, 35, 29, .26);
   --text:      #20262B;
   --text-soft: rgba(32, 38, 43, .76);
-  --muted:     rgba(32, 38, 43, .58);
+  --muted:     rgba(32, 38, 43, .70);
   --overlay:   rgba(255,253,248,.82);
   --overlay-strong: rgba(255,253,248,.94);
   --map-grid:  rgba(32,38,43,.14);

@@ -10,11 +10,10 @@
 .tvds-switch { position: fixed; right: 12px; bottom: 12px; z-index: 90; display: flex; gap: 6px;
   font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
   background: var(--overlay-strong); border: 1px solid var(--line); border-radius: 999px; padding: 6px 8px;
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: .35; transition: opacity .25s; }
-.tvds-switch:hover, .tvds-switch:focus-within { opacity: 1; }
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .tvds-switch button { background: none; border: 0; color: var(--muted); padding: 4px 8px; border-radius: 999px; font: inherit; letter-spacing: inherit; text-transform: inherit; min-height: 24px; }
 .tvds-switch button[aria-pressed="true"] { color: var(--copper-l); border: 1px solid var(--copper); }
-html[data-vertical="mobile"] .tvds-switch { position: static; margin: 20px auto 8px; width: max-content; opacity: .7; }
+html[data-vertical="mobile"] .tvds-switch { position: static; margin: 20px auto 8px; width: max-content; }
 
 /* =========================================================
    MOBILE VERTICAL — single column, content-first, thumb-first
