@@ -212,8 +212,10 @@
       "publication_status": "APPROVED—OWNER CONFIRMED",
       "observed_claim": "One-year workmanship guarantee: if something installed or repaired fails because of how the work was done, we come back and make it right at no additional labor charge. Manufacturer warranties on parts and fixtures are separate and vary by product.",
       "sources": [
-        "public/index.html:85-89,156-169",
-        "public/llms.txt:11-12",
+        "public/index.html:139 (hero stat card)",
+        "public/index.html:213 (promise rail IV)",
+        "public/index.html:221 (homepage pull-quote)",
+        "public/index.html:288 (FAQ answer; mirrored into the FAQPage JSON-LD in the same file by scripts/sync-structured-content.mjs, and into public/llms-full.txt by scripts/generate-ai-discovery.mjs)",
         "owner_copy_update_2026_09_16.hero_cards[1] (“1-yr — Workmanship guarantee on every job”)",
         "Owner explicit confirmation, 2026-09-21: “Yes, keep both” (the one-year guarantee and the one-business-day response commitment)."
       ]

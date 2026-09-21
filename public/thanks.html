@@ -26,7 +26,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DP3CN9H"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<script>window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead',form_name:'contact'});</script>
+<script>
+(function () {
+  var submitted = false;
+  try { submitted = sessionStorage.getItem("smp_lead_submitted") === "1"; } catch (e) {}
+  if (!submitted) return;
+  try { sessionStorage.removeItem("smp_lead_submitted"); } catch (e) {}
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "generate_lead", form_name: "contact" });
+})();
+</script>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="air-emergency"><div class="wrap"><span><span class="pulse"></span>Urgent leak, water intrusion, or no-water issue? Call now to check availability.</span><a href="tel:7658608667">Call now &middot; (765) 860-8667</a></div></div>
   <div class="air-top"><div class="wrap"><div>Indianapolis &middot; Carmel &middot; Fishers &middot; Westfield &middot; Noblesville &middot; Zionsville &middot; Pendleton &middot; Greenwood</div><div><a href="tel:7658608667">(765) 860-8667</a><span class="dot"></span><a href="mailto:sales@simplemanplumbing.net">sales@simplemanplumbing.net</a></div></div></div>
