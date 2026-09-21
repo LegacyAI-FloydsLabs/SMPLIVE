@@ -213,9 +213,9 @@
       "observed_claim": "One-year workmanship guarantee: if something installed or repaired fails because of how the work was done, we come back and make it right at no additional labor charge. Manufacturer warranties on parts and fixtures are separate and vary by product.",
       "sources": [
         "public/index.html:139 (hero stat card)",
-        "public/index.html:213 (promise rail IV)",
-        "public/index.html:221 (homepage pull-quote)",
-        "public/index.html:288 (FAQ answer; mirrored into the FAQPage JSON-LD in the same file by scripts/sync-structured-content.mjs, and into public/llms-full.txt by scripts/generate-ai-discovery.mjs)",
+        "public/index.html:219 (promise rail IV: Done Right, Or It’s On Us)",
+        "public/index.html:227 (homepage pull-quote: one-year workmanship guarantee on everything we touch)",
+        "public/index.html:297 (FAQ answer: What warranty terms apply?; mirrored into the FAQPage JSON-LD in the same file by scripts/sync-structured-content.mjs, and into public/llms-full.txt by scripts/generate-ai-discovery.mjs)",
         "owner_copy_update_2026_09_16.hero_cards[1] (“1-yr — Workmanship guarantee on every job”)",
         "Owner explicit confirmation, 2026-09-21: “Yes, keep both” (the one-year guarantee and the one-business-day response commitment)."
       ]
@@ -260,7 +260,9 @@
     "approved_facts": [
       "Existing visible demo claims may be reproduced consistently during review.",
       "David Kropczynski individual Indiana Plumbing Contractor credential PC12300114, active through 2027-12-31.",
-      "Flood-prevention safety guidance linked to the listed Indiana, FEMA, and utility sources."
+      "Flood-prevention safety guidance linked to the listed Indiana, FEMA, and utility sources.",
+      "Owner-confirmed one-year workmanship guarantee: if something installed or repaired fails because of how the work was done, we come back and make it right at no additional labor charge. Manufacturer warranties on parts and fixtures are separate and vary by product.",
+      "Owner-confirmed website contact-form response commitment: we’ll be in touch within one business day of a website contact-form submission. This does not promise 24/7 phone coverage or a visit window."
     ],
     "rule": "Do not add a physical address, geographic coordinates, corporate license, insurance-policy detail, review markup, or a newly invented operational promise without direct owner confirmation or an authoritative source."
   }

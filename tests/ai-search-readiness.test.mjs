@@ -227,6 +227,17 @@ test("keeps every coverage-map pin visually distinct", async () => {
   assert.equal((areas.match(/class="pin-leader"/g) ?? []).length, pins.length, "every coverage pin must have a leader line to its separate label");
 });
 
+test("omits unverified Organization logos on every page, including noindex pages", async () => {
+  const files = (await readdir(publicDirectory)).filter((file) => file.endsWith(".html"));
+
+  for (const file of files) {
+    const html = await readFile(path.join(publicDirectory, file), "utf8");
+    for (const organization of graphNodes(html).filter((node) => includesType(node, "Organization"))) {
+      assert.ok(!Object.hasOwn(organization, "logo"), `${file} must not claim a logo until a verified logo asset exists`);
+    }
+  }
+});
+
 test("uses one cross-linked JSON-LD graph and disciplined metadata on every public page", async () => {
   const files = (await readdir(publicDirectory)).filter((file) => file.endsWith(".html"));
 
@@ -260,7 +271,6 @@ test("uses one cross-linked JSON-LD graph and disciplined metadata on every publ
 
     const organization = graphNodes(html).find((node) => includesType(node, "Organization"));
     assert.ok(!Object.hasOwn(organization ?? {}, "priceRange"), `${file} must not expose unapproved price ranges in search markup`);
-    assert.ok(!Object.hasOwn(organization ?? {}, "logo"), `${file} must not claim a logo until a verified logo asset exists`);
     const person = graphNodes(html).find((node) => includesType(node, "Person"));
     assert.ok(Array.isArray(person?.knowsAbout) && person.knowsAbout.length > 0, `${file} must identify the named plumber's supported expertise`);
   }
