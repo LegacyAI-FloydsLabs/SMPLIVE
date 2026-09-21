@@ -260,6 +260,7 @@ test("uses one cross-linked JSON-LD graph and disciplined metadata on every publ
 
     const organization = graphNodes(html).find((node) => includesType(node, "Organization"));
     assert.ok(!Object.hasOwn(organization ?? {}, "priceRange"), `${file} must not expose unapproved price ranges in search markup`);
+    assert.ok(!Object.hasOwn(organization ?? {}, "logo"), `${file} must not claim a logo until a verified logo asset exists`);
     const person = graphNodes(html).find((node) => includesType(node, "Person"));
     assert.ok(Array.isArray(person?.knowsAbout) && person.knowsAbout.length > 0, `${file} must identify the named plumber's supported expertise`);
   }
@@ -383,4 +384,41 @@ test("contact form preserves the FormSubmit lead-capture contract", async () => 
 
   const target = /value=["']([^"']*thanks\.html)["']/i.exec(next)?.[1] ?? "";
   assert.ok(target.endsWith("/thanks.html"), `unexpected _next target: ${target}`);
+
+  const phone = /<input\b(?=[^>]*\bid=["']phone["'])[^>]*>/i.exec(form)?.[0] ?? "";
+  assert.ok(phone, "phone field must be present");
+  assert.match(phone, /\brequired\b/i, "phone field must be required");
+});
+
+test("gives every homepage image a WebP source and explicit dimensions", async () => {
+  const home = await readFile(path.join(publicDirectory, "index.html"), "utf8");
+  const assetsDirectory = path.join(publicDirectory, "assets");
+
+  const expectedImages = [
+    { basename: "hero-editorial", width: 1600, height: 2668, loading: "eager", priority: true },
+    { basename: "dave-heater-service", width: 1536, height: 1024, loading: "lazy", priority: false },
+    { basename: "dave-van", width: 1024, height: 1535, loading: "lazy", priority: false },
+    { basename: "before-bath", width: 1600, height: 1537, loading: "lazy", priority: false },
+    { basename: "after-bath", width: 1600, height: 1067, loading: "lazy", priority: false },
+  ];
+
+  for (const { basename, width, height, loading, priority } of expectedImages) {
+    const webpPath = path.join(assetsDirectory, `${basename}.webp`);
+    await assert.doesNotReject(readFile(webpPath), `${basename}.webp must exist in public/assets`);
+
+    const picture = new RegExp(
+      `<picture>\\s*<source srcset=["']/assets/${escapeForRegex(basename)}\\.webp["'] type=["']image/webp["']>\\s*<img src=["']/assets/${escapeForRegex(basename)}\\.jpg["'][^>]*>\\s*<\\/picture>`,
+      "i",
+    ).exec(home)?.[0];
+    assert.ok(picture, `index.html must wrap ${basename}.jpg in a <picture> with a WebP source`);
+
+    assert.match(picture, new RegExp(`width=["']${width}["']`), `${basename} must declare its intrinsic width`);
+    assert.match(picture, new RegExp(`height=["']${height}["']`), `${basename} must declare its intrinsic height`);
+    assert.match(picture, new RegExp(`loading=["']${loading}["']`), `${basename} must use loading="${loading}"`);
+    if (priority) {
+      assert.match(picture, /fetchpriority=["']high["']/, `${basename} must be prioritized as the likely LCP image`);
+    } else {
+      assert.doesNotMatch(picture, /fetchpriority=/, `${basename} must not compete with the hero image for priority`);
+    }
+  }
 });
