@@ -387,7 +387,7 @@ test("contact form preserves the FormSubmit lead-capture contract", async () => 
 
   const phone = /<input\b(?=[^>]*\bid=["']phone["'])[^>]*>/i.exec(form)?.[0] ?? "";
   assert.ok(phone, "phone field must be present");
-  assert.match(phone, /\brequired\b/i, "phone field must be required");
+  assert.match(phone, /(?<![\w-])required(?=[\s>=])/i, "phone field must carry the native required attribute, not aria-required or data-required");
 });
 
 test("gives every homepage image a WebP source and explicit dimensions", async () => {
