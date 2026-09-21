@@ -33,6 +33,10 @@ function normalizeText(value) {
     .trim();
 }
 
+function isNoindex(html) {
+  return /<meta\b(?=[^>]*\bname=["']robots["'])(?=[^>]*\bcontent=["'][^"']*noindex)[^>]*>/i.test(html);
+}
+
 function visibleText(html) {
   return html
     .replace(/<!--([\s\S]*?)-->/g, "")
@@ -134,10 +138,13 @@ test("sitemap covers every public HTML page exactly once", async () => {
     readdir(publicDirectory),
     readFile(path.join(publicDirectory, "sitemap.xml"), "utf8"),
   ]);
+  const indexableFiles = [];
+  for (const file of files.filter((entry) => entry.endsWith(".html") && entry !== "404.html")) {
+    const html = await readFile(path.join(publicDirectory, file), "utf8");
+    if (!isNoindex(html)) indexableFiles.push(file);
+  }
   const expectedLocations = new Set(
-    files
-      .filter((file) => file.endsWith(".html") && file !== "404.html")
-      .map((file) => (file === "index.html" ? `${canonicalOrigin}/` : `${canonicalOrigin}/${file}`)),
+    indexableFiles.map((file) => (file === "index.html" ? `${canonicalOrigin}/` : `${canonicalOrigin}/${file}`)),
   );
   const locations = sitemapLocations(sitemap);
 
@@ -225,6 +232,7 @@ test("uses one cross-linked JSON-LD graph and disciplined metadata on every publ
 
   for (const file of files) {
     const html = await readFile(path.join(publicDirectory, file), "utf8");
+    if (isNoindex(html)) continue;
     const graphs = jsonLdObjects(html);
     assert.equal(graphs.length, 1, `${file} must have one JSON-LD block`);
     assert.ok(Array.isArray(graphs[0]["@graph"]), `${file} JSON-LD must use @graph`);
@@ -327,4 +335,52 @@ test("keeps FAQ and article structured data synchronized with visible page conte
   assert.equal(normalizeText(article.headline), visibleHeadline, "article headline must be visible as the H1");
   assert.equal(normalizeText(article.description), normalizeText(readMetaContent(floodHtml, "name", "description")), "article description must match the page description");
   assert.match(article.wordCount, /^\d+$/, "article word count must be numeric");
+});
+
+test("detects robots noindex regardless of meta attribute order", () => {
+  const variants = [
+    '<meta name="robots" content="noindex,follow">',
+    '<meta content="noindex,follow" name="robots">',
+    "<meta content='noindex' name='robots'>",
+    '<meta name="robots" content="follow, noindex">',
+  ];
+  for (const tag of variants) {
+    assert.ok(isNoindex(tag), `must detect noindex in: ${tag}`);
+  }
+
+  const indexable = [
+    '<meta name="robots" content="index,follow">',
+    '<meta content="index" name="robots">',
+    '<meta name="description" content="noindex is only a word here">',
+    '<meta name="viewport" content="width=device-width">',
+  ];
+  for (const tag of indexable) {
+    assert.ok(!isNoindex(tag), `must not treat as noindex: ${tag}`);
+  }
+});
+
+test("contact form preserves the FormSubmit lead-capture contract", async () => {
+  const html = await readFile(path.join(publicDirectory, "contact.html"), "utf8");
+  const form = /<form\b[^>]*>[\s\S]*?<\/form>/i.exec(html)?.[0] ?? "";
+  assert.ok(form, "contact.html must contain a form");
+
+  assert.match(form, /action=["']https:\/\/formsubmit\.co\/[^"']+["']/i, "form must post to FormSubmit");
+
+  const hidden = (name) =>
+    new RegExp(`<input\\b(?=[^>]*\\bname=["']${name}["'])[^>]*>`, "i").exec(form)?.[0] ?? "";
+
+  const next = hidden("_next");
+  assert.ok(next, "_next redirect field must be present");
+  assert.match(next, /value=["'][^"']*thanks\.html["']/i, "_next must redirect to thanks.html");
+
+  const captcha = hidden("_captcha");
+  assert.ok(captcha, "_captcha field must be present");
+  assert.match(captcha, /value=["']false["']/i, "_captcha must be false so the interstitial stays off");
+
+  const honey = hidden("_honey");
+  assert.ok(honey, "_honey honeypot field must be present");
+  assert.match(honey, /style=["'][^"']*display:\s*none/i, "_honey must stay visually hidden");
+
+  const target = /value=["']([^"']*thanks\.html)["']/i.exec(next)?.[1] ?? "";
+  assert.ok(target.endsWith("/thanks.html"), `unexpected _next target: ${target}`);
 });

@@ -28,7 +28,8 @@
     "APPROVED—CURRENT DEMO COPY": "Existing visible demo content that may be reproduced consistently while the demo is under review.",
     "APPROVED—AUTHORITATIVE SOURCE": "A fact confirmed by a named government or first-party source and safe to use for the stated purpose.",
     "UNVERIFIED—DO NOT PUBLISH": "Observed in the copied site but not confirmed by the owner or an authoritative source. Keep out of new or regenerated public material.",
-    "MISSING—DO NOT INVENT": "No usable value was found in the copied site. Supply an owner-confirmed or authoritative value before publishing."
+    "MISSING—DO NOT INVENT": "No usable value was found in the copied site. Supply an owner-confirmed or authoritative value before publishing.",
+    "APPROVED—OWNER CONFIRMED": "A claim the business owner explicitly confirmed as accurate, recorded here with the date and context of that confirmation."
   },
   "authoritative_sources": {
     "indiana_plumbing_contractor": {
@@ -208,12 +209,25 @@
       ]
     },
     "workmanship_guarantee": {
-      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
-      "observed_claim": "One-year workmanship guarantee; return at no extra cost if work is not fixed right.",
+      "publication_status": "APPROVED—OWNER CONFIRMED",
+      "observed_claim": "One-year workmanship guarantee: if something installed or repaired fails because of how the work was done, we come back and make it right at no additional labor charge. Manufacturer warranties on parts and fixtures are separate and vary by product.",
       "sources": [
-        "public/index.html:85-89,156-169",
-        "public/llms.txt:11-12"
+        "public/index.html:139 (hero stat card)",
+        "public/index.html:213 (promise rail IV)",
+        "public/index.html:221 (homepage pull-quote)",
+        "public/index.html:288 (FAQ answer; mirrored into the FAQPage JSON-LD in the same file by scripts/sync-structured-content.mjs, and into public/llms-full.txt by scripts/generate-ai-discovery.mjs)",
+        "owner_copy_update_2026_09_16.hero_cards[1] (“1-yr — Workmanship guarantee on every job”)",
+        "Owner explicit confirmation, 2026-09-21: “Yes, keep both” (the one-year guarantee and the one-business-day response commitment)."
       ]
+    },
+    "contact_form_response_commitment": {
+      "publication_status": "APPROVED—OWNER CONFIRMED",
+      "observed_claim": "We’ll be in touch within one business day of a website contact-form submission.",
+      "sources": [
+        "public/contact.html (post-submission note under the send button)",
+        "Owner explicit confirmation, 2026-09-21: “Keep the we will answer within one day guarantee”, reconfirmed “Yes, keep both”."
+      ],
+      "distinct_from": "emergency_and_response_claims below, which covers 24/7 phone coverage and a 2–3 business-day visit window and remains UNVERIFIED—DO NOT PUBLISH."
     },
     "licenses_bonding_and_insurance": {
       "publication_status": "APPROVED—AUTHORITATIVE SOURCE",
