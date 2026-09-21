@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="stat"><div class="n">Upfront</div><div class="l">Pricing and scope agreed in writing before work begins</div></div>
         </div>
       </div>
-      <div class="figure-wrap ken-burns">
+      <div class="figure-wrap">
         <picture>
           <source srcset="/assets/hero-editorial.webp" type="image/webp">
           <img src="/assets/hero-editorial.jpg" alt="A finished primary bath in marble and brass, recently fitted by Simple Man Plumbing" width="1600" height="2668" loading="eager" fetchpriority="high">
@@ -415,17 +415,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           card.style.setProperty('--ry', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
         });
       });
-
-      // Hero photo parallax — figure image drifts slower than scroll
-      var hero = document.querySelector('.air-hero .figure-wrap img');
-      if (hero) {
-        function onScroll(){
-          var y = window.scrollY;
-          hero.style.transform = 'translate3d(0,' + (y * 0.06).toFixed(1) + 'px, 0)';
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-      }
 
       // Number counters — SEO-safe: markup ships the FINAL number; the count-up is
       // a purely visual effect that zeroes the element only at animation start.
