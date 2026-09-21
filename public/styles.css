@@ -226,19 +226,25 @@ html[data-theme="light"] .storm-help__grid section { background: rgba(255,253,24
 .air-hero .meta .stat .l { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--muted); margin-top: 8px; text-transform: uppercase; }
 
 .air-hero .figure-wrap { position: relative; }
-.air-hero .figure-wrap picture { position: relative; display: block; }
-.air-hero .figure-wrap img { width: 100%; border-radius: 24px; filter: brightness(.92) saturate(.9); }
-.air-hero .figure-wrap picture::after {
+.air-hero .figure-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 24px; filter: brightness(.92) saturate(.9); }
+.air-hero .figure-wrap::after,
+.air-hero--home .figure-wrap picture::after {
   content:""; position: absolute; inset: -1px; border-radius: 24px;
   background: linear-gradient(160deg, rgba(199,123,75,.0) 0%, rgba(199,123,75,.0) 60%, rgba(199,123,75,.45) 100%);
   pointer-events: none;
 }
 .air-hero .figure-tag {
-  position: relative; display: inline-flex; margin-top: 12px; padding: 10px 16px; border-radius: 999px;
+  position: absolute; left: 24px; bottom: 24px; padding: 10px 16px; border-radius: 999px;
   font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
   background: var(--overlay); border: 1px solid var(--line-2); color: var(--copper-l);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); z-index: 3;
 }
+
+/* Keep the homepage's full composition without changing city-page hero crops. */
+.air-hero--home .figure-wrap picture { position: relative; display: block; }
+.air-hero--home .figure-wrap img { aspect-ratio: auto; }
+.air-hero--home .figure-wrap::after { content: none; }
+.air-hero--home .figure-tag { position: relative; left: auto; bottom: auto; display: inline-flex; margin-top: 12px; }
 
 /* ---------- Sections ---------- */
 .section { padding: 120px 0; position: relative; }
