@@ -45,6 +45,8 @@ export default defineConfig(async () => {
 
   return {
     server: {
+      host: "0.0.0.0",
+      allowedHosts: ["terminal.local"],
       port: 10765,
       strictPort: true,
       watch: isCodexSeatbeltSandbox

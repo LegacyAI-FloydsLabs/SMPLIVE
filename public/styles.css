@@ -276,6 +276,8 @@ html[data-theme="light"] .storm-help__grid section { background: rgba(255,253,24
 .feature .cta { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--copper); position: relative; z-index: 2; }
 
 /* ---------- Editorial split ---------- */
+.owner-intro { display: grid; grid-template-columns: .9fr 1.4fr; gap: 64px; align-items: center; padding-bottom: 72px; border-bottom: 1px solid var(--line); }
+.owner-intro > * { min-width: 0; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .split.flip > .text { order: 2; }
 .split .figure { position: relative; }
@@ -679,6 +681,7 @@ html[data-theme="light"] .storm-help__grid section { background: rgba(255,253,24
 .local-list li::before { content: "—"; position: absolute; left: 0; color: var(--copper); }
 
 @media (max-width: 600px) {
+  .owner-intro { grid-template-columns: 1fr; gap: 28px; }
   .feature-grid, .areas-air-grid, .promise-rail, .cov-stats, .flow { grid-template-columns: 1fr; }
   .promise-rail .item, .cov-stats div { border-right: 0 !important; }
   .promise-rail .item { border-bottom: 1px solid var(--line) !important; }

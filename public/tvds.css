@@ -85,7 +85,7 @@ html[data-vertical="mobile"] .lede { max-width: 100%; }
 html[data-vertical="mobile"] h1 { overflow-wrap: anywhere; }
 
 /* --- All grids single-column; touch targets ≥44px --- */
-html[data-vertical="mobile"] .air-hero .wrap, html[data-vertical="mobile"] .split,
+html[data-vertical="mobile"] .air-hero .wrap, html[data-vertical="mobile"] .split, html[data-vertical="mobile"] .owner-intro,
 html[data-vertical="mobile"] .areas-air, html[data-vertical="mobile"] .contact-air,
 html[data-vertical="mobile"] .banner-cta .wrap, html[data-vertical="mobile"] .page-head-air .wrap,
 html[data-vertical="mobile"] .svc-air .wrap, html[data-vertical="mobile"] .feature-grid,
@@ -103,6 +103,9 @@ html[data-vertical="mobile"] .near-chip { min-height: 44px; padding: 12px 18px; 
 html[data-vertical="mobile"] details summary { min-height: 48px; display: flex; align-items: center; }
 
 /* --- Motion economy on touch: no parallax/ken-burns/cursor mesh --- */
+/* Phone content must stay visible even when scroll observers are delayed. */
+html[data-vertical="mobile"] .reveal,
+html[data-vertical="mobile"] .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
 html[data-vertical="mobile"] .ken-burns img { animation: none; }
 html[data-vertical="mobile"] .air-hero .figure-wrap img { transform: none !important; }
 html[data-vertical="mobile"] .feature::after { display: none; }
