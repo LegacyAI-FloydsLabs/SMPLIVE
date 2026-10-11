@@ -217,6 +217,36 @@ html[data-theme="light"] .storm-help__actions { background: rgba(255,253,248,.7)
 .storm-help__grid h4 { margin-top: 17px; font-size: 20px; }
 .storm-help__grid p { margin-top: 10px; color: var(--text-soft); font-size: 13px; line-height: 1.6; }
 html[data-theme="light"] .storm-help__grid section { background: rgba(255,253,248,.42); }
+
+/* The logo has its own space and leaves the screen with the opening section. */
+.storm-help--branded > .wrap {
+  grid-template-areas: "intro logo" "intro actions" "checklist checklist";
+  row-gap: 24px;
+  align-items: start;
+}
+.storm-help--branded .storm-help__intro { grid-area: intro; align-self: center; min-width: 0; }
+.storm-help--branded .storm-help__logo { grid-area: logo; width: 144px; justify-self: center; }
+.storm-help--branded .storm-help__logo img { width: 100%; height: auto; }
+.storm-help--branded .storm-help__actions { grid-area: actions; min-width: 0; }
+.storm-help--branded .storm-help__checklist { grid-area: checklist; margin-top: 24px; }
+@media (min-width: 1600px) {
+  .storm-help--branded .storm-help__logo { width: 168px; }
+}
+@media (max-width: 1080px) {
+  .storm-help.storm-help--branded > .wrap {
+    grid-template-columns: minmax(0, 1fr) clamp(104px, 20vw, 160px);
+    grid-template-areas: "tag logo" "heading heading" "copy copy" "actions actions" "checklist checklist";
+    column-gap: 16px;
+    row-gap: 0;
+  }
+  .storm-help--branded .storm-help__intro { display: contents; }
+  .storm-help--branded .storm-help__intro > .tag { grid-area: tag; align-self: center; min-width: 0; }
+  .storm-help--branded .storm-help__intro > h2 { grid-area: heading; }
+  .storm-help--branded .storm-help__intro > p { grid-area: copy; }
+  .storm-help--branded .storm-help__logo { width: 100%; justify-self: end; margin-top: -26px; }
+  .storm-help--branded .storm-help__actions,
+  .storm-help--branded .storm-help__checklist { margin-top: 28px; }
+}
 .air-hero { padding: 96px 0 120px; position: relative; }
 .air-hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: center; }
 .air-hero h1 em { font-family: var(--display); font-style: normal; color: var(--copper-l); }
