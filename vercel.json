@@ -3,5 +3,23 @@
   "framework": null,
   "buildCommand": "node scripts/sync-structured-content.mjs && node scripts/generate-ai-discovery.mjs",
   "outputDirectory": "public",
-  "installCommand": "true"
+  "installCommand": "true",
+  "redirects": [
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/residential",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.simplemanplumbing.tech" }],
+      "destination": "https://simplemanplumbing.tech/:path*",
+      "permanent": true
+    }
+  ]
 }

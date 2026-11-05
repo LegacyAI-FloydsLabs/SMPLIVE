@@ -163,5 +163,5 @@ Disallow: /staging/
 Allow: /llms.txt
 Allow: /llms-full.txt
 
-Sitemap: https://www.simplemanplumbing.net/sitemap.xml
-Host: www.simplemanplumbing.net
+Sitemap: https://simplemanplumbing.tech/sitemap.xml
+Host: simplemanplumbing.tech

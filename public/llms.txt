@@ -7,30 +7,30 @@
 
 - Phone: +1-765-860-8667
 - Email: sales@simplemanplumbing.net
-- Website: https://www.simplemanplumbing.net/
+- Website: https://simplemanplumbing.tech/
 
 ## Core pages
 
-- [Indianapolis Plumbing | Simple Man Plumbing](https://www.simplemanplumbing.net/) — Overview of Simple Man Plumbing, its approach, and its service-area links.
-- [Indianapolis Plumber | Simple Man Plumbing](https://www.simplemanplumbing.net/about.html) — Background, working approach, and homeowner-focused commitments.
-- [Indianapolis Service Areas | Simple Man Plumbing](https://www.simplemanplumbing.net/areas.html) — Service-area index with links to each represented community.
-- [Indianapolis Plumbing Contact | Simple Man Plumbing](https://www.simplemanplumbing.net/contact.html) — Contact options and appointment-request information.
-- [Indianapolis Sump Pumps | Simple Man Plumbing](https://www.simplemanplumbing.net/flood-prevention-sump-pumps.html) — Flood-prevention, sump-pump, drainage, and backup-readiness guidance for Indiana homeowners.
-- [Indianapolis Plumbing Services | Simple Man Plumbing](https://www.simplemanplumbing.net/services.html) — Residential plumbing services, work categories, and a clear-pricing approach.
+- [Indianapolis Plumbing | Simple Man Plumbing](https://simplemanplumbing.tech/) — Overview of Simple Man Plumbing, its approach, and its service-area links.
+- [Indianapolis Plumber | Simple Man Plumbing](https://simplemanplumbing.tech/about.html) — Background, working approach, and homeowner-focused commitments.
+- [Indianapolis Service Areas | Simple Man Plumbing](https://simplemanplumbing.tech/areas.html) — Service-area index with links to each represented community.
+- [Indianapolis Plumbing Contact | Simple Man Plumbing](https://simplemanplumbing.tech/contact.html) — Contact options and appointment-request information.
+- [Indianapolis Sump Pumps | Simple Man Plumbing](https://simplemanplumbing.tech/flood-prevention-sump-pumps.html) — Flood-prevention, sump-pump, drainage, and backup-readiness guidance for Indiana homeowners.
+- [Indianapolis Plumbing Services | Simple Man Plumbing](https://simplemanplumbing.tech/services.html) — Residential plumbing services, work categories, and a clear-pricing approach.
 
 ## Service-area pages
 
-- [Plumber in Broad Ripple, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-broad-ripple.html) — Local service-area information.
-- [Plumber in Carmel, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-carmel.html) — Local service-area information.
-- [Plumber in Castleton, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-castleton.html) — Local service-area information.
-- [Plumber in Fishers, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-fishers.html) — Local service-area information.
-- [Plumber in Greenwood, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-greenwood.html) — Local service-area information.
-- [Plumber in Indianapolis, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-indianapolis.html) — Local service-area information.
-- [Keystone at Crossing Plumber | Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-keystone.html) — Local service-area information.
-- [Plumber in Noblesville, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-noblesville.html) — Local service-area information.
-- [Plumber in Pendleton, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-pendleton.html) — Local service-area information.
-- [Plumber in Westfield, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-westfield.html) — Local service-area information.
-- [Plumber in Zionsville, IN - Simple Man Plumbing](https://www.simplemanplumbing.net/plumber-zionsville.html) — Local service-area information.
+- [Plumber in Broad Ripple, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-broad-ripple.html) — Local service-area information.
+- [Plumber in Carmel, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-carmel.html) — Local service-area information.
+- [Plumber in Castleton, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-castleton.html) — Local service-area information.
+- [Plumber in Fishers, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-fishers.html) — Local service-area information.
+- [Plumber in Greenwood, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-greenwood.html) — Local service-area information.
+- [Plumber in Indianapolis, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-indianapolis.html) — Local service-area information.
+- [Keystone at Crossing Plumber | Simple Man Plumbing](https://simplemanplumbing.tech/plumber-keystone.html) — Local service-area information.
+- [Plumber in Noblesville, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-noblesville.html) — Local service-area information.
+- [Plumber in Pendleton, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-pendleton.html) — Local service-area information.
+- [Plumber in Westfield, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-westfield.html) — Local service-area information.
+- [Plumber in Zionsville, IN - Simple Man Plumbing](https://simplemanplumbing.tech/plumber-zionsville.html) — Local service-area information.
 
 ## Use and scope
 

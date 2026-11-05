@@ -27,7 +27,13 @@ The full standard calls for these fields, but they should not be guessed or pull
 | Operating hours and emergency-contact policy | Existing demo wording has more than one interpretation of office, appointment, and phone coverage. | One approved wording and schedule |
 | Business profiles (`sameAs`) and reviews | Only verified, owner-controlled profiles and real review data belong in schema. | Approved profile URLs; at least five verifiable reviews before rating markup |
 | Company license, bond, and insurance detail | The authoritative record establishes David Kropczynski's individual Indiana contractor credential, not a separate corporate credential or insurance policy. | Owner-approved company documentation if it should be stated |
-| Final canonical host | This demo currently preserves `https://www.simplemanplumbing.net` as its canonical identity. The final Vercel/production host decision must be made before a public release. | Deployment and canonical-host decision |
+
+**Canonical host — resolved 2026-11-04.** `https://simplemanplumbing.tech` (apex, no `www`) is the
+permanent canonical. `simplemanplumbing.net` was not recovered and is no longer counted on; the
+`.tech` host, originally interim, is permanent. Every canonical URL, sitemap entry, `robots.txt`
+directive, and `llms.txt` link now names the apex host, and the `.net` host permanently redirects
+here. The remaining operational dependency is on the hosting side: the apex must serve 200 in Vercel
+with `www` redirecting to it, or the canonical URLs would point at a redirect.
 
 ## Before a public release
 

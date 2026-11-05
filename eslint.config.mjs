@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local build output and relocated evidence snapshots.
+    ".vinext/**",
+    ".wrangler/**",
+    ".local-evidence/**",
+    "work/**",
   ]),
 ]);
 

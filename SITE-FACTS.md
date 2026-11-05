@@ -18,12 +18,17 @@ The machine-readable registry is [`data/site-facts.json`](data/site-facts.json).
 - **One-year workmanship guarantee:** approved by the owner on 2026-09-16 (`owner_copy_update_2026_09_16.hero_cards[1]`) and reconfirmed directly on 2026-09-21. Registry entry: `claims_requiring_evidence.workmanship_guarantee`, now `APPROVED—OWNER CONFIRMED`.
 - **One-business-day contact-form response:** confirmed by the owner on 2026-09-21. Registry entry: `claims_requiring_evidence.contact_form_response_commitment`, `APPROVED—OWNER CONFIRMED`. This is narrower than, and does not confirm, the 24/7-phone and 2–3-business-day visit-window claims below, which remain unverified.
 
+## Domain decisions
+
+- **Canonical host (2026-11-04):** `https://simplemanplumbing.tech` — apex, no `www`. `simplemanplumbing.net` was never recovered and is no longer counted on; `.tech`, originally an interim host, is now permanent. The `.net` Webflow site redirects here. For the canonical URLs to resolve without a hop, the apex must serve 200 in Vercel and `www` must redirect to it.
+- **Email:** `sales@simplemanplumbing.net` is unchanged. That mailbox is the contact address; no `.tech` mailbox exists.
+
 ## What the copied site currently says
 
 | Subject | Observed value | Status | Exact copied-site evidence |
 | --- | --- | --- | --- |
 | Display name | Simple Man Plumbing | **UNVERIFIED—DO NOT PUBLISH** | `public/index.html:6-12`; `public/llms.txt:1-3` |
-| Website | `https://www.simplemanplumbing.net/` | **UNVERIFIED—DO NOT PUBLISH** | `public/index.html:6-14`; `public/llms.txt:19-24` |
+| Website | `https://simplemanplumbing.tech/` | **UNVERIFIED—DO NOT PUBLISH** | `public/index.html:17`; `public/llms.txt:10` |
 | Phone | `+1-765-860-8667` | **UNVERIFIED—DO NOT PUBLISH** | `public/contact.html:26,100-103`; `public/llms.txt:19-25` |
 | Email | `sales@simplemanplumbing.net` | **UNVERIFIED—DO NOT PUBLISH** | `public/contact.html:26,100-103`; `public/llms.txt:19-24` |
 | Owner / lead | Dave, described as owner and lead plumber | **UNVERIFIED—DO NOT PUBLISH** | `public/about.html:68-78`; `public/llms.txt:7-9` |

@@ -1,6 +1,6 @@
 # Service-area hero imagery — sources & attribution
 
-All images sourced from Wikimedia Commons and re-treated (darkened/brand-graded) for use as area-page hero backdrops on simplemanplumbing.net. Credit lines below satisfy CC attribution; verify each license before publishing.
+All images sourced from Wikimedia Commons and re-treated (darkened/brand-graded) for use as area-page hero backdrops on simplemanplumbing.tech. Credit lines below satisfy CC attribution; verify each license before publishing.
 
 | File | Town | Subject | Author | License | Source |
 |---|---|---|---|---|---|

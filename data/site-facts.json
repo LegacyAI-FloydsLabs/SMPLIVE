@@ -20,6 +20,11 @@
     },
     "link_evidence": "Google search URL supplied by owner. Facebook URL listed under Social Media in the exact BBB business profile. Nextdoor profile verified by business name, Fortville location and telephone +1-765-860-8667 on 2026-09-16."
   },
+  "owner_copy_update_2026_11_04": {
+    "canonical_host": "https://simplemanplumbing.tech",
+    "decision": "The apex .tech host is the permanent canonical. SimpleManPlumbing.net was never recovered and is no longer counted on; .tech, originally an interim host, is now permanent.",
+    "source": "Owner directive, 2026-11-04"
+  },
   "registry_version": "0.1.0",
   "snapshot_date": "2026-08-17",
   "scope": "Experimental Site copy only. This registry records what the copied site says; it does not independently verify real-world business facts.",
@@ -63,11 +68,11 @@
       ]
     },
     "website": {
-      "value": "https://www.simplemanplumbing.net/",
+      "value": "https://simplemanplumbing.tech/",
       "publication_status": "UNVERIFIED—DO NOT PUBLISH",
       "sources": [
-        "public/index.html:6-14",
-        "public/llms.txt:19-24"
+        "owner_copy_update_2026_11_04.canonical_host",
+        "public/index.html:17"
       ]
     },
     "owner_or_lead": {
