@@ -87,7 +87,7 @@ function shortSummary(pages) {
     "## Contact",
     "",
     "- Phone: +1-765-860-8667",
-    "- Email: sales@simplemanplumbing.net",
+    "- Email: sales@simplemanplumbing.tech",
     `- Website: ${canonicalBase}/`,
     "",
     "## Core pages",
