@@ -25,22 +25,26 @@
     "decision": "The apex .tech host is the permanent canonical. SimpleManPlumbing.net was never recovered and is no longer counted on; .tech, originally an interim host, is now permanent.",
     "source": "Owner directive, 2026-11-04"
   },
-  "registry_version": "0.1.0",
+  "registry_version": "0.2.0",
   "snapshot_date": "2026-08-17",
-  "scope": "Experimental Site copy only. This registry records what the copied site says; it does not independently verify real-world business facts.",
+  "scope": "Records what the public site states and the evidence behind each claim. Entries marked APPROVED cite an owner directive or a named source with its check date; others remain unverified.",
   "publication_rule": "Existing public-demo claims may be reproduced consistently in generated materials. New or strengthened factual claims require an owner confirmation or authoritative source recorded here.",
   "status_legend": {
     "APPROVED—CURRENT DEMO COPY": "Existing visible demo content that may be reproduced consistently while the demo is under review.",
     "APPROVED—AUTHORITATIVE SOURCE": "A fact confirmed by a named government or first-party source and safe to use for the stated purpose.",
     "UNVERIFIED—DO NOT PUBLISH": "Observed in the copied site but not confirmed by the owner or an authoritative source. Keep out of new or regenerated public material.",
     "MISSING—DO NOT INVENT": "No usable value was found in the copied site. Supply an owner-confirmed or authoritative value before publishing.",
-    "APPROVED—OWNER CONFIRMED": "A claim the business owner explicitly confirmed as accurate, recorded here with the date and context of that confirmation."
+    "APPROVED—OWNER CONFIRMED": "A claim the business owner explicitly confirmed as accurate, recorded here with the date and context of that confirmation.",
+    "RETIRED—NO LONGER ON SITE": "A claim the copied site used to make that no current public page states. Kept for history; do not reintroduce without owner confirmation."
   },
   "authoritative_sources": {
     "indiana_plumbing_contractor": {
       "url": "https://mylicense.in.gov/EVerification/Search.aspx",
-      "checked_on": "2026-08-17",
-      "facts": "David Kropczynski, Indiana Plumbing Contractor PC12300114, active through 2027-12-31. This verifies an individual credential, not a corporate plumbing license."
+      "checked_on": "2026-09-16",
+      "previous_check": "2026-08-17",
+      "facts": "David Kropczynski, Indiana Plumbing Contractor PC12300114, Active, issued 2023-06-12, expires 2027-12-31. Related record: Simple Man Plumbing, Indiana Plumbing Corporation CO52600043, Active, issued 2026-08-28, expires 2027-12-31, with Kropczynski as manager.",
+      "evidence_file": "SEO-POLISH-VERIFICATION.md",
+      "recheck_2026_11_13": "Not re-run: the search form requires reCAPTCHA."
     },
     "flood_prevention_guidance": {
       "checked_on": "2026-08-17",
@@ -51,109 +55,171 @@
         "https://info.citizensenergygroup.com/wastewater/connection"
       ],
       "use": "Safety and preparedness guidance in the flood-prevention resource page; not a statement of an emergency, response time, or business affiliation."
+    },
+    "bbb_profile": {
+      "url": "https://www.bbb.org/us/in/fortville/profile/plumber/simple-man-plumbing-llc-0382-90071735",
+      "checked_on": "2026-09-16",
+      "facts": "Simple Man Plumbing LLC, Fortville IN, phone (765) 860-8667, owner Dave Kropczynski, website listed as simplemanplumbing.net (out of date since the 2026-11-04 move to .tech).",
+      "use": "Third-party corroboration of name, phone and owner; used as sameAs and a footer link. No rating or review claims.",
+      "recheck_2026_11_13": "Blocked: HTTP 403 to automated requests."
     }
   },
   "business_identity": {
     "legal_name": {
       "value": null,
       "publication_status": "MISSING—DO NOT INVENT",
-      "sources": []
+      "sources": [],
+      "notes": "BBB (2026-09-16) lists 'Simple Man Plumbing LLC'; the Indiana PLA corporation record lists 'Simple Man Plumbing'. Confirm the registered legal name with the owner or the Indiana Secretary of State before publishing it."
     },
     "display_name": {
       "value": "Simple Man Plumbing",
-      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "publication_status": "APPROVED—AUTHORITATIVE SOURCE",
       "sources": [
-        "public/index.html:6-12",
-        "public/llms.txt:1-3"
+        "Indiana PLA corporation record CO52600043 (checked 2026-09-16)",
+        "BBB profile (checked 2026-09-16)",
+        "public/index.html:35 (JSON-LD name)"
       ]
     },
     "website": {
       "value": "https://simplemanplumbing.tech/",
-      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "publication_status": "APPROVED—OWNER CONFIRMED",
       "sources": [
         "owner_copy_update_2026_11_04.canonical_host",
-        "public/index.html:17"
+        "live_verification_2026_11_13 (apex serves 200; www and .net redirect to it)",
+        "public/index.html canonical link"
       ]
     },
     "owner_or_lead": {
-      "value": "Dave; described as owner and lead plumber",
+      "value": "David (Dave) Kropczynski; described on the site as owner and lead plumber",
       "publication_status": "UNVERIFIED—DO NOT PUBLISH",
       "sources": [
-        "public/about.html:68-78",
-        "public/llms.txt:7-9"
-      ]
+        "public/about.html:76-85",
+        "Indiana PLA PC12300114 / CO52600043 (2026-09-16)",
+        "BBB profile (2026-09-16)"
+      ],
+      "notes": "Indiana PLA lists him as manager of corporation CO52600043; BBB lists him as owner (both checked 2026-09-16). 'Lead plumber' wording is site copy."
     }
   },
   "contact": {
     "telephone_e164": {
       "value": "+1-765-860-8667",
-      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "publication_status": "APPROVED—AUTHORITATIVE SOURCE",
       "sources": [
-        "public/contact.html:26,100-103",
-        "public/llms.txt:19-25"
-      ]
+        "public/contact.html:34 (JSON-LD telephone)",
+        "public/contact.html:130 (footer tel link)",
+        "BBB profile (2026-09-16)"
+      ],
+      "notes": "Matches the BBB profile (2026-09-16) and the Nextdoor profile (2026-09-16, owner_copy_update_2026_09_16.link_evidence). Live production page shows the same number (2026-11-13)."
     },
     "email": {
       "value": "service@simplemanplumbing.tech",
-      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "publication_status": "APPROVED—OWNER CONFIRMED",
       "sources": [
-        "public/contact.html:26,100-103",
-        "public/llms.txt:19-24"
-      ]
+        "owner_copy_update_2026_11_13",
+        "public/contact.html:115 (By email block)",
+        "public/llms.txt:9",
+        "live_verification_2026_11_13 (MX lookup)"
+      ],
+      "delivery_status": "NOT DELIVERABLE AS OF 2026-11-13: simplemanplumbing.tech publishes no MX record. Set up a mailbox (e.g. Google Workspace or Microsoft 365) and add its MX records in Vercel DNS, then send a test message.",
+      "previous_value": "sales@simplemanplumbing.net (also has no MX record as of 2026-11-13)"
     },
     "physical_address": {
       "value": null,
       "publication_status": "MISSING—DO NOT INVENT",
-      "notes": "The copied JSON-LD has a non-street string (Serving Indianapolis and the Northside) and an Indianapolis ZIP. It is not sufficient evidence of a publishable physical address.",
+      "notes": "No current public page publishes a street address, ZIP or 'Serving Indianapolis and the Northside' address string (checked 2026-11-13). BBB places the business in Fortville, IN.",
       "sources": [
-        "public/contact.html:26"
+        "grep of public/*.html for streetAddress/postalCode/addressLocality: none (2026-11-13)"
       ]
     },
     "geographic_coordinates": {
       "value": null,
       "publication_status": "MISSING—DO NOT INVENT",
-      "notes": "Coordinates shown in copied JSON-LD are not corroborated by a verifiable physical address and must not be regenerated.",
+      "notes": "No current public page publishes coordinates (checked 2026-11-13). Do not add any without a verified address.",
       "sources": [
-        "public/contact.html:26"
+        "grep of public/*.html for geo: none (2026-11-13)"
       ]
     },
     "operating_hours": {
-      "value": null,
-      "publication_status": "MISSING—DO NOT INVENT",
-      "notes": "Current copied pages disagree: llms.txt and the Zionsville page specify appointment/office hours, multiple page footers say Monday through Friday 8–5, and repeated JSON-LD represents a 24/7 contact point. Owner confirmation is required.",
+      "value": "Monday–Friday, 8 a.m.–5 p.m. Visits by appointment.",
+      "publication_status": "APPROVED—OWNER CONFIRMED",
+      "notes": "Owner-supplied 2026-09-16 (owner_copy_update_2026_09_16.confirmed_hours). The earlier conflicts (Tuesday-office hours, 24/7 contact point) are no longer on any page; the visible text and JSON-LD openingHoursSpecification agree, and the live page matches (2026-11-13).",
       "sources": [
-        "public/llms.txt:19-25",
-        "public/contact.html:103,117",
-        "public/plumber-zionsville.html:26"
+        "owner_copy_update_2026_09_16.confirmed_hours",
+        "public/contact.html:117",
+        "public/contact.html:34 (openingHoursSpecification)"
       ]
     }
   },
   "service_areas": {
     "publication_status": "UNVERIFIED—DO NOT PUBLISH",
-    "notes": "The list is consistently present in llms.txt and the service-area index, but no owner confirmation is stored in this copy.",
+    "notes": "The 8 headline areas in the site header were supplied by the owner on 2026-09-16; the other 3 pages (Broad Ripple, Castleton, Keystone at the Crossing) have no stored owner confirmation.",
     "sources": [
-      "public/llms.txt:27-45",
-      "public/areas.html:95-113"
+      "public/areas.html",
+      "public/plumber-*.html (11 pages)",
+      "owner_copy_update_2026_09_16.primary_service_areas (8 headline areas)"
     ],
     "areas": [
-      { "name": "Indianapolis", "county": "Marion County", "page": "/plumber-indianapolis.html" },
-      { "name": "Carmel", "county": "Hamilton County", "page": "/plumber-carmel.html" },
-      { "name": "Fishers", "county": "Hamilton County", "page": "/plumber-fishers.html" },
-      { "name": "Westfield", "county": "Hamilton County", "page": "/plumber-westfield.html" },
-      { "name": "Noblesville", "county": "Hamilton County", "page": "/plumber-noblesville.html" },
-      { "name": "Broad Ripple", "county": "Marion County", "page": "/plumber-broad-ripple.html" },
-      { "name": "Castleton", "county": "Marion County", "page": "/plumber-castleton.html" },
-      { "name": "Keystone at the Crossing", "county": "Marion County", "page": "/plumber-keystone.html" },
-      { "name": "Pendleton", "county": "Madison County", "page": "/plumber-pendleton.html" },
-      { "name": "Greenwood", "county": "Johnson County", "page": "/plumber-greenwood.html" },
-      { "name": "Zionsville", "county": "Boone County", "page": "/plumber-zionsville.html" }
+      {
+        "name": "Indianapolis",
+        "county": "Marion County",
+        "page": "/plumber-indianapolis.html"
+      },
+      {
+        "name": "Carmel",
+        "county": "Hamilton County",
+        "page": "/plumber-carmel.html"
+      },
+      {
+        "name": "Fishers",
+        "county": "Hamilton County",
+        "page": "/plumber-fishers.html"
+      },
+      {
+        "name": "Westfield",
+        "county": "Hamilton County",
+        "page": "/plumber-westfield.html"
+      },
+      {
+        "name": "Noblesville",
+        "county": "Hamilton County",
+        "page": "/plumber-noblesville.html"
+      },
+      {
+        "name": "Broad Ripple",
+        "county": "Marion County",
+        "page": "/plumber-broad-ripple.html"
+      },
+      {
+        "name": "Castleton",
+        "county": "Marion County",
+        "page": "/plumber-castleton.html"
+      },
+      {
+        "name": "Keystone at the Crossing",
+        "county": "Marion County",
+        "page": "/plumber-keystone.html"
+      },
+      {
+        "name": "Pendleton",
+        "county": "Madison County",
+        "page": "/plumber-pendleton.html"
+      },
+      {
+        "name": "Greenwood",
+        "county": "Johnson County",
+        "page": "/plumber-greenwood.html"
+      },
+      {
+        "name": "Zionsville",
+        "county": "Boone County",
+        "page": "/plumber-zionsville.html"
+      }
     ]
   },
   "services": {
     "publication_status": "UNVERIFIED—DO NOT PUBLISH",
     "sources": [
-      "public/llms.txt:47-51",
-      "public/services.html:100-157"
+      "public/services.html (sections 01–03)"
     ],
     "categories": [
       {
@@ -185,33 +251,50 @@
           "fixture replacement"
         ]
       }
-    ]
+    ],
+    "notes": "The offerings listed below still match the live services page text as of 2026-11-13."
   },
   "pricing": {
-    "publication_status": "UNVERIFIED—DO NOT PUBLISH",
-    "notes": "The copied site labels these as typical ranges, not guarantees, and says final price follows on-site diagnosis. Owner confirmation and effective date are required before reuse.",
+    "publication_status": "RETIRED—NO LONGER ON SITE",
+    "notes": "No current public page shows these price ranges or a priceRange property (checked 2026-11-13); services.html now describes a pricing approach without figures. Kept for history only.",
     "schema_price_range": "$89-$22,000",
     "schema_price_range_basis": "Derived only from the lowest and highest values in the copied, visible pricing list; it is not a quote or guarantee.",
     "sources": [
-      "public/llms.txt:10-17",
-      "public/services.html:60-96"
+      "Historical: public/services.html and public/llms.txt as of 2026-08-17"
     ],
     "observed_ranges_usd": [
-      { "service": "Diagnostic visit", "minimum": 89, "maximum": null },
-      { "service": "Faucet repair", "minimum": 149, "maximum": 320 },
-      { "service": "Water heater installed", "minimum": 1800, "maximum": 3400 },
-      { "service": "Whole-home repipe", "minimum": 9000, "maximum": 22000 }
+      {
+        "service": "Diagnostic visit",
+        "minimum": 89,
+        "maximum": null
+      },
+      {
+        "service": "Faucet repair",
+        "minimum": 149,
+        "maximum": 320
+      },
+      {
+        "service": "Water heater installed",
+        "minimum": 1800,
+        "maximum": 3400
+      },
+      {
+        "service": "Whole-home repipe",
+        "minimum": 9000,
+        "maximum": 22000
+      }
     ]
   },
   "claims_requiring_evidence": {
     "experience_and_owner_led_practice": {
-      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "publication_status": "APPROVED—OWNER CONFIRMED",
       "observed_claim": "Dave has over eight years of hands-on plumbing experience and is owner-led.",
       "sources": [
-        "public/index.html:85-89,148-151",
-        "public/about.html:68-78",
-        "public/llms.txt:3,7-9"
-      ]
+        "public/index.html:142 (8+ yrs stat)",
+        "owner_copy_update_2026_09_16.hero_cards[0]",
+        "public/about.html:76-85"
+      ],
+      "notes": "The '8+ yrs of hands-on plumbing experience' card was supplied by the owner on 2026-09-16."
     },
     "workmanship_guarantee": {
       "publication_status": "APPROVED—OWNER CONFIRMED",
@@ -232,43 +315,75 @@
         "public/contact.html (post-submission note under the send button)",
         "Owner explicit confirmation, 2026-09-21: “Keep the we will answer within one day guarantee”, reconfirmed “Yes, keep both”."
       ],
-      "distinct_from": "emergency_and_response_claims below, which covers 24/7 phone coverage and a 2–3 business-day visit window and remains UNVERIFIED—DO NOT PUBLISH."
+      "distinct_from": "emergency_and_response_claims below, which covers 24/7 phone coverage and a 2–3 business-day visit window and remains UNVERIFIED—DO NOT PUBLISH.",
+      "delivery_note": "The form posts to FormSubmit for simplemanplumbing@gmail.com; end-to-end delivery was not tested on 2026-11-13."
     },
     "licenses_bonding_and_insurance": {
       "publication_status": "APPROVED—AUTHORITATIVE SOURCE",
-      "observed_claim": "David Kropczynski holds an active Indiana Plumbing Contractor credential, PC12300114, through 2027-12-31. Existing demo copy also states licensed, bonded, and insured; do not infer a corporate plumbing license or publish insurance-policy details without separate evidence.",
+      "observed_claim": "David Kropczynski holds Indiana Plumbing Contractor PC12300114 and Simple Man Plumbing holds Indiana Plumbing Corporation CO52600043, both active through 2027-12-31. The site no longer claims 'bonded' or 'insured'; do not reintroduce bonding or insurance claims without separate evidence.",
       "sources": [
-        "public/llms.txt:3,7-9,60-63",
-        "public/plumber-zionsville.html:26-28,201-202",
-        "https://mylicense.in.gov/EVerification/Search.aspx (checked 2026-08-17)"
+        "public/index.html:284-287 (licensing FAQ)",
+        "public/contact.html:34 (JSON-LD hasCredential)",
+        "Indiana PLA search (checked 2026-09-16; see authoritative_sources.indiana_plumbing_contractor)"
       ]
     },
     "emergency_and_response_claims": {
-      "publication_status": "UNVERIFIED—DO NOT PUBLISH",
+      "publication_status": "RETIRED—NO LONGER ON SITE",
       "observed_claim": "The phone is answered 24/7 and non-emergency visits normally receive a 2–3 business-day window.",
       "sources": [
-        "public/contact.html:31,88-93",
-        "public/index.html:213-215",
-        "public/plumber-zionsville.html:28"
-      ]
+        "Historical: public/contact.html, public/index.html, public/plumber-zionsville.html as of 2026-08-17",
+        "scripts/clean-go-live-claims.mjs"
+      ],
+      "notes": "scripts/clean-go-live-claims.mjs replaced the 24/7 and 2–3-business-day wording with 'call to discuss availability'; no public page contains either claim (checked 2026-11-13). Kept for history."
     },
     "reviews_or_ratings": {
       "value": [],
       "publication_status": "MISSING—DO NOT INVENT",
-      "notes": "No individual review, rating, reviewer, date, or review-source record is stored in this copied site. llms.txt says reviews are present, but the copied public HTML contains no review or aggregateRating structured-data property.",
+      "notes": "No review, rating or aggregateRating markup exists on any public page (checked 2026-11-13). Do not add any without real review records.",
       "sources": [
-        "public/llms.txt:69-71"
+        "grep of public/*.html for aggregateRating: none (2026-11-13)"
       ]
     }
   },
   "ready_for_generation": {
     "approved_facts": [
       "Existing visible demo claims may be reproduced consistently during review.",
-      "David Kropczynski individual Indiana Plumbing Contractor credential PC12300114, active through 2027-12-31.",
+      "Indiana licenses: David Kropczynski, Plumbing Contractor PC12300114; Simple Man Plumbing, Plumbing Corporation CO52600043; both active through 2027-12-31 (Indiana PLA, checked 2026-09-16).",
       "Flood-prevention safety guidance linked to the listed Indiana, FEMA, and utility sources.",
       "Owner-confirmed one-year workmanship guarantee: if something installed or repaired fails because of how the work was done, we come back and make it right at no additional labor charge. Manufacturer warranties on parts and fixtures are separate and vary by product.",
-      "Owner-confirmed website contact-form response commitment: we’ll be in touch within one business day of a website contact-form submission. This does not promise 24/7 phone coverage or a visit window."
+      "Owner-confirmed website contact-form response commitment: we’ll be in touch within one business day of a website contact-form submission. This does not promise 24/7 phone coverage or a visit window.",
+      "Canonical website https://simplemanplumbing.tech/ (owner, 2026-11-04; live-verified 2026-11-13).",
+      "Phone +1-765-860-8667 (BBB and Nextdoor, 2026-09-16).",
+      "Hours: Monday–Friday, 8 a.m.–5 p.m. Visits by appointment (owner, 2026-09-16).",
+      "Published email service@simplemanplumbing.tech (owner, 2026-11-13) — BLOCKER: the domain has no MX record, so mail to it bounces until a mailbox is set up."
     ],
-    "rule": "Do not add a physical address, geographic coordinates, corporate license, insurance-policy detail, review markup, or a newly invented operational promise without direct owner confirmation or an authoritative source."
+    "rule": "Do not add a physical address, geographic coordinates, insurance or bonding claim, review markup, pricing figures, 24/7 or visit-window promises, or any other new operational promise without direct owner confirmation or an authoritative source."
+  },
+  "last_reviewed": "2026-11-13",
+  "owner_copy_update_2026_11_13": {
+    "published_email": "service@simplemanplumbing.tech",
+    "decision": "Published contact address changes from sales@simplemanplumbing.net to service@simplemanplumbing.tech. An interim change to sales@simplemanplumbing.tech the same day was superseded.",
+    "form_recipient_unchanged": "simplemanplumbing@gmail.com (FormSubmit)",
+    "source": "Owner directive in the Claude Code session, 2026-11-13 (PR #9)"
+  },
+  "live_verification_2026_11_13": {
+    "method": "HTTPS GET and Google Public DNS (dns.google) lookups from a cloud session, 2026-11-13T14:57Z.",
+    "results": {
+      "https://simplemanplumbing.tech/": "200; canonical link is https://simplemanplumbing.tech/",
+      "https://www.simplemanplumbing.tech/": "308 to https://simplemanplumbing.tech/",
+      "https://simplemanplumbing.net/": "301 to https://www.simplemanplumbing.net/, which 301s to https://simplemanplumbing.tech/",
+      "/contact and /residential": "308 to /contact.html and /services.html",
+      "/contact.html and /thanks.html": "200",
+      "DNS nameservers (simplemanplumbing.tech)": "ns1.vercel-dns.com, ns2.vercel-dns.com",
+      "DNS A (simplemanplumbing.tech)": "216.150.1.65, 216.150.16.129",
+      "DNS MX (simplemanplumbing.tech)": "NONE. No mail exchanger is published, so mail to any @simplemanplumbing.tech address cannot be delivered.",
+      "DNS MX (simplemanplumbing.net)": "NONE. Mail to sales@simplemanplumbing.net also cannot be delivered.",
+      "Live contact page (production, before PR #9 merges)": "Shows sales@simplemanplumbing.net (16 occurrences across contact.html, index.html, llms.txt), phone +1-765-860-8667, hours Monday–Friday 8 a.m.–5 p.m. by appointment, license numbers PC12300114 and CO52600043, form posting to formsubmit.co/simplemanplumbing@gmail.com."
+    },
+    "not_rechecked": {
+      "Indiana PLA license search": "Search form requires reCAPTCHA; not automated. Latest recorded check: 2026-09-16 (SEO-POLISH-VERIFICATION.md).",
+      "BBB profile": "www.bbb.org returned HTTP 403 to automated requests. Latest recorded check: 2026-09-16.",
+      "FormSubmit delivery": "No test submission was sent; delivery to simplemanplumbing@gmail.com is unverified."
+    }
   }
 }

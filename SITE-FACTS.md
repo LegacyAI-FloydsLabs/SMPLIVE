@@ -1,56 +1,80 @@
 # Simple Man Plumbing — fact registry
 
-This is the internal source-of-truth intake file for the experimental Site copy. It records what the copied site currently states, with provenance. It is not evidence that those real-world claims are correct.
+This is the human review guide to the site's facts and the evidence behind each one. The machine-readable registry is [`data/site-facts.json`](data/site-facts.json).
+
+**Last reviewed: November 13, 2026.** On that date the live site and DNS were re-checked from a cloud session (see "Live verification" below). The Indiana license search and the BBB profile could not be re-checked automatically, so their latest evidence is still the September 16, 2026 check in [`SEO-POLISH-VERIFICATION.md`](SEO-POLISH-VERIFICATION.md).
 
 ## Publishing gate
 
-Existing visible demo claims may be reproduced consistently while the demo is under review. New or strengthened factual claims need owner confirmation or an authoritative source. Missing values remain **MISSING—DO NOT INVENT**.
+New or strengthened factual claims need owner confirmation or an authoritative source recorded in the registry. Missing values remain **MISSING—DO NOT INVENT**. Claims the site no longer makes are marked **RETIRED—NO LONGER ON SITE** and must not be reintroduced without owner confirmation.
 
-The machine-readable registry is [`data/site-facts.json`](data/site-facts.json). It is the canonical input for later generators; this file is the human review guide.
+## Open blockers
 
-## Confirmed sources now used
+1. **No mailbox exists for the published email.** `simplemanplumbing.tech` has no MX record (Google Public DNS, 2026-11-13), so mail to `service@simplemanplumbing.tech` bounces. `simplemanplumbing.net` has no MX record either, so the address on the live site today (`sales@simplemanplumbing.net`) also cannot receive mail. Fix: create the `service@` mailbox with an email provider, add the provider's MX (and SPF) records in Vercel DNS, then send a test message.
+2. **Contact-form delivery is untested.** The form posts to FormSubmit for `simplemanplumbing@gmail.com`. Send one clearly marked test submission and confirm it arrives in that inbox.
+3. **The BBB profile still lists `simplemanplumbing.net`** as the website (as of 2026-09-16). Update it to `https://simplemanplumbing.tech` through the BBB business portal.
+4. **Legal name is unconfirmed.** BBB says "Simple Man Plumbing LLC"; the Indiana plumbing-corporation record says "Simple Man Plumbing". Confirm with the owner or the Indiana Secretary of State before publishing a legal name.
 
-- **Indiana contractor credential:** David Kropczynski holds Indiana Plumbing Contractor credential `PC12300114`, active through December 31, 2027. Source: [Indiana PLA verification](https://mylicense.in.gov/EVerification/Search.aspx), checked August 17, 2026. This is an individual credential; it is not a claim that a corporate entity holds a separate plumbing license.
-- **Flood-prevention resource guidance:** the flood-and-sump-pump page links to [Indiana flood safety](https://www.in.gov/dhs/get-prepared/nature-safety/flood-safety/), FEMA homeowner guidance, and public sewer-backup/connection resources. These sources support safety and prevention guidance only; they do not establish current emergency conditions, availability, or affiliation.
+## Live verification — November 13, 2026
 
-## Owner-confirmed claims
+| Check | Result |
+| --- | --- |
+| `https://simplemanplumbing.tech/` | 200; canonical link is the apex URL |
+| `https://www.simplemanplumbing.tech/` | 308 → apex |
+| `https://simplemanplumbing.net/` | 301 → `www.simplemanplumbing.net` → 301 → `https://simplemanplumbing.tech/` |
+| `/contact`, `/residential` | 308 → `/contact.html`, `/services.html` |
+| `/contact.html`, `/thanks.html` | 200 |
+| Nameservers | `ns1.vercel-dns.com`, `ns2.vercel-dns.com` |
+| MX `simplemanplumbing.tech` | **none** |
+| MX `simplemanplumbing.net` | **none** |
+| Live contact page | phone `+1-765-860-8667`; hours Monday–Friday 8–5 by appointment; licenses PC12300114 and CO52600043; email still `sales@simplemanplumbing.net` until PR #9 is merged and deployed |
+| Indiana PLA search | not re-run (reCAPTCHA) |
+| BBB profile | not re-run (HTTP 403 to automated requests) |
 
-- **One-year workmanship guarantee:** approved by the owner on 2026-09-16 (`owner_copy_update_2026_09_16.hero_cards[1]`) and reconfirmed directly on 2026-09-21. Registry entry: `claims_requiring_evidence.workmanship_guarantee`, now `APPROVED—OWNER CONFIRMED`.
-- **One-business-day contact-form response:** confirmed by the owner on 2026-09-21. Registry entry: `claims_requiring_evidence.contact_form_response_commitment`, `APPROVED—OWNER CONFIRMED`. This is narrower than, and does not confirm, the 24/7-phone and 2–3-business-day visit-window claims below, which remain unverified.
+## Confirmed facts
 
-## Domain decisions
-
-- **Canonical host (2026-11-04):** `https://simplemanplumbing.tech` — apex, no `www`. `simplemanplumbing.net` was never recovered and is no longer counted on; `.tech`, originally an interim host, is now permanent. The `.net` Webflow site redirects here. For the canonical URLs to resolve without a hop, the apex must serve 200 in Vercel and `www` must redirect to it.
-- **Email (2026-11-13):** `service@simplemanplumbing.tech` is the published contact address, replacing `sales@simplemanplumbing.net` at the owner's direction (an interim change to `sales@simplemanplumbing.tech` the same day was superseded). The website form still delivers through FormSubmit to `simplemanplumbing@gmail.com`.
-
-## What the copied site currently says
-
-| Subject | Observed value | Status | Exact copied-site evidence |
+| Fact | Value | Status | Evidence |
 | --- | --- | --- | --- |
-| Display name | Simple Man Plumbing | **UNVERIFIED—DO NOT PUBLISH** | `public/index.html:6-12`; `public/llms.txt:1-3` |
-| Website | `https://simplemanplumbing.tech/` | **UNVERIFIED—DO NOT PUBLISH** | `public/index.html:17`; `public/llms.txt:10` |
-| Phone | `+1-765-860-8667` | **UNVERIFIED—DO NOT PUBLISH** | `public/contact.html:26,100-103`; `public/llms.txt:19-25` |
-| Email | `service@simplemanplumbing.tech` | **UNVERIFIED—DO NOT PUBLISH** | `public/contact.html:26,100-103`; `public/llms.txt:19-24` |
-| Owner / lead | Dave, described as owner and lead plumber | **UNVERIFIED—DO NOT PUBLISH** | `public/about.html:68-78`; `public/llms.txt:7-9` |
-| Service area | 11 named locations, including Zionsville | **UNVERIFIED—DO NOT PUBLISH** | `public/llms.txt:27-45`; `public/areas.html:95-113` |
-| Services | Residential plumbing, everyday repairs, home system upgrades | **UNVERIFIED—DO NOT PUBLISH** | `public/llms.txt:47-51`; `public/services.html:100-157` |
-| Pricing ranges | Four typical ranges listed; schema summarizes their displayed minimum/maximum as `$89-$22,000` | **UNVERIFIED—DO NOT PUBLISH** | `public/llms.txt:10-17`; `public/services.html:60-96` |
+| Display name | Simple Man Plumbing | **APPROVED—AUTHORITATIVE SOURCE** | Indiana PLA corporation record CO52600043 and BBB profile, both checked 2026-09-16 |
+| Website | `https://simplemanplumbing.tech/` | **APPROVED—OWNER CONFIRMED** | Owner directive 2026-11-04; live check 2026-11-13 (apex 200, `www` and `.net` redirect to it) |
+| Phone | `+1-765-860-8667` | **APPROVED—AUTHORITATIVE SOURCE** | BBB and Nextdoor profiles, 2026-09-16; matches live site 2026-11-13 |
+| Email | `service@simplemanplumbing.tech` | **APPROVED—OWNER CONFIRMED** (not deliverable; see blocker 1) | Owner directive 2026-11-13 (PR #9); replaces `sales@simplemanplumbing.net` |
+| Hours | Monday–Friday, 8 a.m.–5 p.m. Visits by appointment. | **APPROVED—OWNER CONFIRMED** | Owner copy update 2026-09-16; visible text and JSON-LD agree (`public/contact.html:117`, `:34`) |
+| Owner | David (Dave) Kropczynski | Corroborated | PLA lists him as manager of CO52600043, BBB as owner (2026-09-16); "lead plumber" is site wording (`public/about.html:76-85`) |
+| Contractor license | PC12300114, David Kropczynski, active through 2027-12-31 | **APPROVED—AUTHORITATIVE SOURCE** | Indiana PLA, checked 2026-08-17 and 2026-09-16 |
+| Corporation license | CO52600043, Simple Man Plumbing, issued 2026-08-28, active through 2027-12-31 | **APPROVED—AUTHORITATIVE SOURCE** | Indiana PLA, checked 2026-09-16 |
+| Experience | 8+ years of hands-on plumbing experience | **APPROVED—OWNER CONFIRMED** | Owner copy update 2026-09-16 (`public/index.html:142`) |
+| Workmanship guarantee | One year on workmanship; manufacturer warranties separate | **APPROVED—OWNER CONFIRMED** | Owner 2026-09-16, reconfirmed 2026-09-21 |
+| Form response | Contact within one business day of a form submission | **APPROVED—OWNER CONFIRMED** | Owner 2026-09-21 |
+| Contact-form recipient | `simplemanplumbing@gmail.com` via FormSubmit | Owner-supplied 2026-09-16 | Delivery not yet tested (blocker 2) |
+| Flood-prevention guidance | Indiana DHS, FEMA, Citizens Energy links | **APPROVED—AUTHORITATIVE SOURCE** | Checked 2026-08-17; guidance only, no affiliation or emergency claim |
 
-## Do not publish until supplied and confirmed
+## Still unverified
 
-- Legal business name and any DBA.
-- Real, publishable physical address. The current structured-data string is “Serving Indianapolis and the Northside,” not a street address. Source: `public/contact.html:26`.
-- Geographic coordinates. Existing coordinates have no usable address evidence. Source: `public/contact.html:26`.
-- Operating hours. Current copy conflicts: appointment/Tuesday-office hours in `public/llms.txt:19-25`, Monday–Friday hours in `public/contact.html:117`, and a 24/7 contact point in `public/contact.html:26`.
-- License numbers, licensing authority/record, insurance and bonding evidence, and expiry dates. Claims exist, but evidence does not. Sources: `public/llms.txt:3,7-9,60-63`; `public/plumber-zionsville.html:26-28,201-202`.
-- Individual reviews, ratings, review source URLs, reviewer names, and dates. No review records are stored in the copied public files; do not synthesize them. `public/llms.txt:69-71` only asserts they exist.
-- Any emergency-availability, pricing, or location-specific operational claim not listed under “Owner-confirmed claims” above. This includes the 24/7-phone-coverage and 2–3-business-day visit-window claims in current copy, which remain unverified. The one-year workmanship guarantee and the one-business-day contact-form response are owner-confirmed (see above) and are not covered by this restriction.
+| Subject | Current site content | Status | What is needed |
+| --- | --- | --- | --- |
+| Service areas | 11 area pages; 8 headline areas (Indianapolis, Carmel, Fishers, Westfield, Noblesville, Zionsville, Pendleton, Greenwood) | 8 owner-supplied 2026-09-16; Broad Ripple, Castleton and Keystone at the Crossing **UNVERIFIED** | Owner confirmation of the other 3 areas |
+| Services | Residential plumbing, everyday repairs, home system upgrades (`public/services.html`) | **UNVERIFIED** | Owner confirmation of the offerings list |
+| Legal name | not published | **MISSING—DO NOT INVENT** | See blocker 4 |
 
-## Reconciliation required before schema work
+## No longer on the site (retired)
 
-1. Confirm the canonical business identity, phone, email, physical address, and service-area policy.
-2. Confirm one operating-hours policy, separating office hours, appointment availability, and emergency phone coverage if applicable.
-3. Confirm the services that are actually offered, pricing effective date/ranges, guarantee terms, and licensing/insurance claims.
-4. Enter source URLs or owner-approved evidence in `data/site-facts.json`, change only those fields to `APPROVED`, then generate synchronized public artifacts.
+Checked against every public page on 2026-11-13. None of these appear any more; keep them off unless the owner confirms them.
 
-The registry deliberately contains no invented address, hours, reviews, license details, or coordinates.
+- Price ranges (diagnostic $89, faucet $149–$320, water heater $1,800–$3,400, repipe $9,000–$22,000) and the `$89-$22,000` schema price range.
+- 24/7 phone answering and the 2–3-business-day visit window (removed by `scripts/clean-go-live-claims.mjs`).
+- "Bonded and insured" wording.
+- The "Serving Indianapolis and the Northside" address string, ZIP and geographic coordinates in structured data.
+- Tuesday-office hours.
+
+## Do not publish without evidence
+
+- A physical street address or coordinates (BBB places the business in Fortville, IN; no address is confirmed for publication).
+- Insurance or bonding claims.
+- Individual reviews, ratings or `aggregateRating` markup; no review records exist in this project.
+- Any new pricing, emergency-availability or response-time promise.
+
+## Domain history
+
+- **2026-11-04:** `https://simplemanplumbing.tech` (apex) became the permanent canonical host. `simplemanplumbing.net` was never recovered and redirects to `.tech`. Verified live on 2026-11-13.
+- **2026-11-13:** published email changed from `sales@simplemanplumbing.net` to `service@simplemanplumbing.tech` at the owner's direction (an interim change to `sales@simplemanplumbing.tech` the same day was superseded). The form recipient is unchanged.
