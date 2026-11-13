@@ -21,7 +21,7 @@ The machine-readable registry is [`data/site-facts.json`](data/site-facts.json).
 ## Domain decisions
 
 - **Canonical host (2026-11-04):** `https://simplemanplumbing.tech` — apex, no `www`. `simplemanplumbing.net` was never recovered and is no longer counted on; `.tech`, originally an interim host, is now permanent. The `.net` Webflow site redirects here. For the canonical URLs to resolve without a hop, the apex must serve 200 in Vercel and `www` must redirect to it.
-- **Email (2026-11-13):** `sales@simplemanplumbing.tech` is the published contact address, replacing `sales@simplemanplumbing.net` at the owner's direction. The website form still delivers through FormSubmit to `simplemanplumbing@gmail.com`.
+- **Email (2026-11-13):** `service@simplemanplumbing.tech` is the published contact address, replacing `sales@simplemanplumbing.net` at the owner's direction (an interim change to `sales@simplemanplumbing.tech` the same day was superseded). The website form still delivers through FormSubmit to `simplemanplumbing@gmail.com`.
 
 ## What the copied site currently says
 
@@ -30,7 +30,7 @@ The machine-readable registry is [`data/site-facts.json`](data/site-facts.json).
 | Display name | Simple Man Plumbing | **UNVERIFIED—DO NOT PUBLISH** | `public/index.html:6-12`; `public/llms.txt:1-3` |
 | Website | `https://simplemanplumbing.tech/` | **UNVERIFIED—DO NOT PUBLISH** | `public/index.html:17`; `public/llms.txt:10` |
 | Phone | `+1-765-860-8667` | **UNVERIFIED—DO NOT PUBLISH** | `public/contact.html:26,100-103`; `public/llms.txt:19-25` |
-| Email | `sales@simplemanplumbing.tech` | **UNVERIFIED—DO NOT PUBLISH** | `public/contact.html:26,100-103`; `public/llms.txt:19-24` |
+| Email | `service@simplemanplumbing.tech` | **UNVERIFIED—DO NOT PUBLISH** | `public/contact.html:26,100-103`; `public/llms.txt:19-24` |
 | Owner / lead | Dave, described as owner and lead plumber | **UNVERIFIED—DO NOT PUBLISH** | `public/about.html:68-78`; `public/llms.txt:7-9` |
 | Service area | 11 named locations, including Zionsville | **UNVERIFIED—DO NOT PUBLISH** | `public/llms.txt:27-45`; `public/areas.html:95-113` |
 | Services | Residential plumbing, everyday repairs, home system upgrades | **UNVERIFIED—DO NOT PUBLISH** | `public/llms.txt:47-51`; `public/services.html:100-157` |
