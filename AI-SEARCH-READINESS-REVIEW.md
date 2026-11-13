@@ -24,16 +24,17 @@ The full standard calls for these fields, but they should not be guessed or pull
 | --- | --- | --- |
 | Legal business name and public mailing/street address | The demo does not establish a customer-facing address or the exact legal name to publish. | Owner-approved NAP record |
 | Coordinates and location-specific postal codes | They need to correspond to an address or real office, not an inferred service area. | Approved public address/location policy |
-| Operating hours and emergency-contact policy | Existing demo wording has more than one interpretation of office, appointment, and phone coverage. | One approved wording and schedule |
-| Business profiles (`sameAs`) and reviews | Only verified, owner-controlled profiles and real review data belong in schema. | Approved profile URLs; at least five verifiable reviews before rating markup |
-| Company license, bond, and insurance detail | The authoritative record establishes David Kropczynski's individual Indiana contractor credential, not a separate corporate credential or insurance policy. | Owner-approved company documentation if it should be stated |
+| ~~Operating hours and emergency-contact policy~~ | **Resolved.** Owner supplied "Monday–Friday, 8 a.m.–5 p.m. Visits by appointment." on 2026-09-16; the 24/7 and visit-window wording was removed. Visible text and JSON-LD agree (re-checked 2026-11-13). | — |
+| Reviews (`sameAs` partly resolved) | The exact BBB profile was verified and added as `sameAs` on 2026-09-16. No review records exist, so no rating markup. | At least five verifiable reviews before rating markup |
+| Bond and insurance detail (company license resolved) | Indiana PLA (checked 2026-09-16) shows corporation license CO52600043 for Simple Man Plumbing alongside PC12300114; both are published. Bonding and insurance are not evidenced and are no longer claimed. | Owner-approved insurance/bond documentation if it should be stated |
 
 **Canonical host — resolved 2026-11-04.** `https://simplemanplumbing.tech` (apex, no `www`) is the
 permanent canonical. `simplemanplumbing.net` was not recovered and is no longer counted on; the
 `.tech` host, originally interim, is permanent. Every canonical URL, sitemap entry, `robots.txt`
 directive, and `llms.txt` link now names the apex host, and the `.net` host permanently redirects
-here. The remaining operational dependency is on the hosting side: the apex must serve 200 in Vercel
-with `www` redirecting to it, or the canonical URLs would point at a redirect.
+here. **Verified live 2026-11-13:** the apex serves 200, `www` 308-redirects to it, and `.net` redirects
+to it (see `SITE-FACTS.md`). Open dependency: neither `.tech` nor `.net` publishes an MX record, so the
+published email address cannot receive mail until a mailbox is set up.
 
 ## Before a public release
 
