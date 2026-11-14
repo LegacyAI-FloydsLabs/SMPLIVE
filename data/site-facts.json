@@ -118,10 +118,17 @@
         "owner_copy_update_2026_11_13",
         "public/contact.html:115 (By email block)",
         "public/llms.txt:9",
-        "live_verification_2026_11_13 (MX lookup)"
+        "live_verification_2026_11_13 (MX lookup)",
+        "Owner report with Dave's confirmation, 2026-11-14"
       ],
-      "delivery_status": "NOT DELIVERABLE AS OF 2026-11-13: simplemanplumbing.tech publishes no MX record. Set up a mailbox (e.g. Google Workspace or Microsoft 365) and add its MX records in Vercel DNS, then send a test message.",
-      "previous_value": "sales@simplemanplumbing.net (also has no MX record as of 2026-11-13)"
+      "previous_value": "sales@simplemanplumbing.net: never a mailbox, only a forward to Dave's Gmail; .net has no MX record (2026-11-13), so the forward no longer works.",
+      "delivery": {
+        "provider": "Purelymail",
+        "routing": "Routing rule redirects service@simplemanplumbing.tech to simplemanplumbing@gmail.com (no copy kept in Purelymail).",
+        "dns_added": "2026-11-14T18:44Z in Vercel DNS: ownership TXT, MX 50 mailserver.purelymail.com., SPF v=spf1 include:_spf.purelymail.com ~all, DKIM CNAMEs purelymail1/2/3._domainkey -> key1/2/3.dkimroot.purelymail.com.",
+        "dmarc": "Pending: add _dmarc CNAME -> dmarcroot.purelymail.com. on or after 2026-11-16.",
+        "test": "Owner-reported 2026-11-14: test email to service@ arrived in Dave's Gmail."
+      }
     },
     "physical_address": {
       "value": null,
@@ -316,7 +323,7 @@
         "Owner explicit confirmation, 2026-09-21: “Keep the we will answer within one day guarantee”, reconfirmed “Yes, keep both”."
       ],
       "distinct_from": "emergency_and_response_claims below, which covers 24/7 phone coverage and a 2–3 business-day visit window and remains UNVERIFIED—DO NOT PUBLISH.",
-      "delivery_note": "The form posts to FormSubmit for simplemanplumbing@gmail.com; end-to-end delivery was not tested on 2026-11-13."
+      "delivery_note": "Form posts to FormSubmit for simplemanplumbing@gmail.com; owner test submissions on 2026-11-13 and 2026-11-14 arrived in Dave's Gmail (owner-reported)."
     },
     "licenses_bonding_and_insurance": {
       "publication_status": "APPROVED—AUTHORITATIVE SOURCE",
@@ -355,11 +362,11 @@
       "Canonical website https://simplemanplumbing.tech/ (owner, 2026-11-04; live-verified 2026-11-13).",
       "Phone +1-765-860-8667 (BBB and Nextdoor, 2026-09-16).",
       "Hours: Monday–Friday, 8 a.m.–5 p.m. Visits by appointment (owner, 2026-09-16).",
-      "Published email service@simplemanplumbing.tech (owner, 2026-11-13) — BLOCKER: the domain has no MX record, so mail to it bounces until a mailbox is set up."
+      "Published email service@simplemanplumbing.tech (owner, 2026-11-13); Purelymail mailbox redirecting to Dave's Gmail, delivery confirmed 2026-11-14."
     ],
     "rule": "Do not add a physical address, geographic coordinates, insurance or bonding claim, review markup, pricing figures, 24/7 or visit-window promises, or any other new operational promise without direct owner confirmation or an authoritative source."
   },
-  "last_reviewed": "2026-11-13",
+  "last_reviewed": "2026-11-14",
   "owner_copy_update_2026_11_13": {
     "published_email": "service@simplemanplumbing.tech",
     "decision": "Published contact address changes from sales@simplemanplumbing.net to service@simplemanplumbing.tech. An interim change to sales@simplemanplumbing.tech the same day was superseded.",
@@ -383,7 +390,11 @@
     "not_rechecked": {
       "Indiana PLA license search": "Search form requires reCAPTCHA; not automated. Latest recorded check: 2026-09-16 (SEO-POLISH-VERIFICATION.md).",
       "BBB profile": "www.bbb.org returned HTTP 403 to automated requests. Latest recorded check: 2026-09-16.",
-      "FormSubmit delivery": "No test submission was sent; delivery to simplemanplumbing@gmail.com is unverified."
+      "FormSubmit delivery": "Superseded: owner test submissions arrived 2026-11-13 and 2026-11-14 (owner-reported)."
     }
+  },
+  "domains": {
+    "simplemanplumbing.tech": "Registered through Vercel (bought 2026-09-23, auto-renew, expires 2027-09-23); DNS at Vercel.",
+    "simplemanplumbing.net": "DNS at Wix (ns14/ns15.wixdns.net); www CNAME to cdn.webflow.com; redirects to .tech. A non-authoritative simplemanplumbing.net entry also exists in the Vercel team (added 2026-11-05)."
   }
 }

@@ -33,8 +33,8 @@ permanent canonical. `simplemanplumbing.net` was not recovered and is no longer 
 `.tech` host, originally interim, is permanent. Every canonical URL, sitemap entry, `robots.txt`
 directive, and `llms.txt` link now names the apex host, and the `.net` host permanently redirects
 here. **Verified live 2026-11-13:** the apex serves 200, `www` 308-redirects to it, and `.net` redirects
-to it (see `SITE-FACTS.md`). Open dependency: neither `.tech` nor `.net` publishes an MX record, so the
-published email address cannot receive mail until a mailbox is set up.
+to it (see `SITE-FACTS.md`). **Email resolved 2026-11-14:** `service@simplemanplumbing.tech` is a Purelymail mailbox
+with MX, SPF and DKIM records in Vercel DNS; delivery to Dave's Gmail was confirmed (DMARC pending).
 
 ## Before a public release
 
