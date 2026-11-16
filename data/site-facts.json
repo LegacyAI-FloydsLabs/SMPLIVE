@@ -126,7 +126,7 @@
         "provider": "Purelymail",
         "routing": "Routing rule redirects service@simplemanplumbing.tech to simplemanplumbing@gmail.com (no copy kept in Purelymail).",
         "dns_added": "2026-11-14T18:44Z in Vercel DNS: ownership TXT, MX 50 mailserver.purelymail.com., SPF v=spf1 include:_spf.purelymail.com ~all, DKIM CNAMEs purelymail1/2/3._domainkey -> key1/2/3.dkimroot.purelymail.com.",
-        "dmarc": "Pending: add _dmarc CNAME -> dmarcroot.purelymail.com. on or after 2026-11-16.",
+        "dmarc": "Added 2026-11-16T18:51Z: _dmarc CNAME -> dmarcroot.purelymail.com. Resolves to v=DMARC1; p=reject; ruf=mailto:dmarc@purelymail.com (checked 2026-11-16T18:55Z). Mail from @simplemanplumbing.tech must be sent through Purelymail's servers.",
         "test": "Owner-reported 2026-11-14: test email to service@ arrived in Dave's Gmail."
       }
     },
@@ -362,11 +362,11 @@
       "Canonical website https://simplemanplumbing.tech/ (owner, 2026-11-04; live-verified 2026-11-13).",
       "Phone +1-765-860-8667 (BBB and Nextdoor, 2026-09-16).",
       "Hours: Monday–Friday, 8 a.m.–5 p.m. Visits by appointment (owner, 2026-09-16).",
-      "Published email service@simplemanplumbing.tech (owner, 2026-11-13); Purelymail mailbox redirecting to Dave's Gmail, delivery confirmed 2026-11-14."
+      "Published email service@simplemanplumbing.tech (owner, 2026-11-13); Purelymail mailbox redirecting to Dave's Gmail, delivery confirmed 2026-11-14; SPF, DKIM and DMARC in place 2026-11-16."
     ],
     "rule": "Do not add a physical address, geographic coordinates, insurance or bonding claim, review markup, pricing figures, 24/7 or visit-window promises, or any other new operational promise without direct owner confirmation or an authoritative source."
   },
-  "last_reviewed": "2026-11-14",
+  "last_reviewed": "2026-11-16",
   "owner_copy_update_2026_11_13": {
     "published_email": "service@simplemanplumbing.tech",
     "decision": "Published contact address changes from sales@simplemanplumbing.net to service@simplemanplumbing.tech. An interim change to sales@simplemanplumbing.tech the same day was superseded.",

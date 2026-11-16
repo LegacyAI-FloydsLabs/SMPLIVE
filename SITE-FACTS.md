@@ -10,14 +10,13 @@ New or strengthened factual claims need owner confirmation or an authoritative s
 
 ## Open blockers
 
-1. **DMARC record pending.** Add `_dmarc` CNAME → `dmarcroot.purelymail.com.` in Vercel DNS on or after 2026-11-16, once SPF and DKIM have been live for 48 hours (Purelymail's guidance).
-2. **The BBB profile still lists `simplemanplumbing.net`** as the website (as of 2026-09-16). Update it to `https://simplemanplumbing.tech` through the BBB business portal.
-3. **Legal name is unconfirmed.** BBB says "Simple Man Plumbing LLC"; the Indiana plumbing-corporation record says "Simple Man Plumbing". Confirm with the owner or the Indiana Secretary of State before publishing a legal name.
+1. **The BBB profile still lists `simplemanplumbing.net`** as the website (as of 2026-09-16). Update it to `https://simplemanplumbing.tech` through the BBB business portal.
+2. **Legal name is unconfirmed.** BBB says "Simple Man Plumbing LLC"; the Indiana plumbing-corporation record says "Simple Man Plumbing". Confirm with the owner or the Indiana Secretary of State before publishing a legal name.
 
 ## Email setup — November 14, 2026
 
 - **Provider:** Purelymail. `service@simplemanplumbing.tech` is a real mailbox; a routing rule redirects all its mail to `simplemanplumbing@gmail.com` (Dave's regular Gmail). Routing rules redirect rather than copy, so no copy stays in Purelymail.
-- **DNS (Vercel, added 2026-11-14 18:44 UTC, confirmed in Google Public DNS):** ownership TXT, MX `50 mailserver.purelymail.com.`, SPF `v=spf1 include:_spf.purelymail.com ~all`, DKIM CNAMEs `purelymail1/2/3._domainkey` → `key1/2/3.dkimroot.purelymail.com.`. Purelymail's DNS check accepted the domain. AutoConfig/AutoDiscover were deliberately not added (Gmail is the client).
+- **DNS (Vercel, added 2026-11-14 18:44 UTC, confirmed in Google Public DNS):** ownership TXT, MX `50 mailserver.purelymail.com.`, SPF `v=spf1 include:_spf.purelymail.com ~all`, DKIM CNAMEs `purelymail1/2/3._domainkey` → `key1/2/3.dkimroot.purelymail.com.`. Purelymail's DNS check accepted the domain. DMARC CNAME `_dmarc` → `dmarcroot.purelymail.com.` added 2026-11-16 18:51 UTC after 48 hours of SPF/DKIM; it resolves to `v=DMARC1; p=reject; ruf=mailto:dmarc@purelymail.com`, so mail claiming to be from the domain must be sent through Purelymail. AutoConfig/AutoDiscover were deliberately not added (Gmail is the client).
 - **Delivery tests (owner-reported 2026-11-14):** a test email to `service@simplemanplumbing.tech` and a website contact-form submission both arrived in Dave's Gmail, as confirmed by Dave. Not independently verified from this repository.
 - **`sales@simplemanplumbing.net`** was never a mailbox, only a forward to Dave's Gmail. `.net` has no MX record, so that forward no longer works; the site no longer publishes it. `.net` DNS is at Wix (`ns14/ns15.wixdns.net`); `www.simplemanplumbing.net` points to Webflow. The `simplemanplumbing.net` entry in the Vercel team is not authoritative, so records added there have no effect.
 
@@ -84,4 +83,4 @@ Checked against every public page on 2026-11-13. None of these appear any more; 
 
 - **2026-11-04:** `https://simplemanplumbing.tech` (apex) became the permanent canonical host. `simplemanplumbing.net` was never recovered and redirects to `.tech`. Verified live on 2026-11-13.
 - **2026-11-13:** published email changed from `sales@simplemanplumbing.net` to `service@simplemanplumbing.tech` at the owner's direction (an interim change to `sales@simplemanplumbing.tech` the same day was superseded). The form recipient is unchanged.
-- **2026-11-14:** Purelymail mailbox and DNS records set up for `service@simplemanplumbing.tech`; mail redirects to Dave's Gmail. DMARC to follow after 48 hours.
+- **2026-11-14:** Purelymail mailbox and DNS records set up for `service@simplemanplumbing.tech`; mail redirects to Dave's Gmail. DMARC added 2026-11-16.

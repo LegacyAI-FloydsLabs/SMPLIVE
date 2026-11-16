@@ -34,7 +34,7 @@ permanent canonical. `simplemanplumbing.net` was not recovered and is no longer 
 directive, and `llms.txt` link now names the apex host, and the `.net` host permanently redirects
 here. **Verified live 2026-11-13:** the apex serves 200, `www` 308-redirects to it, and `.net` redirects
 to it (see `SITE-FACTS.md`). **Email resolved 2026-11-14:** `service@simplemanplumbing.tech` is a Purelymail mailbox
-with MX, SPF and DKIM records in Vercel DNS; delivery to Dave's Gmail was confirmed (DMARC pending).
+with MX, SPF and DKIM records in Vercel DNS; delivery to Dave's Gmail was confirmed; DMARC added 2026-11-16.
 
 ## Before a public release
 
